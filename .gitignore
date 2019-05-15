@@ -9,3 +9,5 @@
 *.log
 *.res
 *.tlog
+Browse.VC.db
+.suo
