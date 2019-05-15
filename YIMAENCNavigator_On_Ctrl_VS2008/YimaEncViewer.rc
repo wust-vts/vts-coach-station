@@ -1,0 +1,2205 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\YimaEncViewer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\YimaEncViewer.ico"
+
+IDR_YIMAENTYPE          ICON                    "res\\YimaEncViewerDoc.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+IDB_EMULATE_RADAR_BITMAP2 BITMAP                  "res\\bitmap1.bmp"
+
+IDB_BITMAP1             BITMAP                  "res\\bmp00001.bmp"
+
+IDB_BITMAP2             BITMAP                  "res\\bitmap2.bmp"
+
+IDB_EMULATE_RADAR_BITMAP1 BITMAP                  "res\\emulate_.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 20, 17
+BEGIN
+    BUTTON      ID_MAP_LIB_MAN
+    SEPARATOR
+    BUTTON      ID_MOVE_UP
+    BUTTON      ID_MOVE_DOWN
+    BUTTON      ID_MOVE_LEFT
+    BUTTON      ID_MOVE_RIGHT
+    SEPARATOR
+    BUTTON      ID_MAP_HAND_ROAM
+    SEPARATOR
+    BUTTON      ID_ZOOM_IN
+    BUTTON      ID_ZOOM_OUT
+    SEPARATOR
+    BUTTON      ID_AREA_ZOOM_IN
+    SEPARATOR
+    BUTTON      ID_ADD_RADAR
+    BUTTON      ID_LOAD_ROUTEDATA
+    SEPARATOR
+    BUTTON      ID_SHIP_START
+    BUTTON      ID_SHIP_STOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "图库管理",                        ID_MAP_LIB_MAN
+        MENUITEM "打印..",                        ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "保存编辑的S57海图",                  ID_SAVE_MEM_S57_MAP
+        MENUITEM SEPARATOR
+        MENUITEM "设置S63设备ID",                   ID_SET_S63_USR_ID
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "查看"
+    BEGIN
+        MENUITEM "放大\t+",                       ID_ZOOM_IN
+        MENUITEM "缩小\t -",                      ID_ZOOM_OUT
+        MENUITEM "中心点/旋转",                      ID_CENTER_ROTATE_MAP
+        MENUITEM "指定比例尺",                       ID_SET_SCALE
+        MENUITEM SEPARATOR
+        MENUITEM "左移\tLeft",                    ID_MOVE_LEFT
+        MENUITEM "右移\tRight",                   ID_MOVE_RIGHT
+        MENUITEM "上移\tUp",                      ID_MOVE_UP
+        MENUITEM "下移\tDown",                    ID_MOVE_DOWN
+        MENUITEM SEPARATOR
+        MENUITEM "测面积",                         ID_MEASURE_AREA
+        MENUITEM "电子方位线",                       ID_EBL_LINE
+        MENUITEM "区域放大",                        ID_AREA_ZOOM_IN
+        MENUITEM "框选物标",                        ID_AREA_SELECT
+        POPUP "空心/延迟"
+        BEGIN
+            MENUITEM "空心",                          ID_HOLLOW_MAP_EFFECT
+            MENUITEM "延迟",                          ID_DELAY_MAP_EFFECT
+            MENUITEM "取消空心/延迟效果",                   ID_CANCEL_MAP_EFFECT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "按鼠标位置滚轴缩放",                   ID_WHEEL_ZOOM_BY_MOUSE_POSI, CHECKED
+        MENUITEM "实时漫游",                        ID_RUNTIME_DRAGMAP
+        MENUITEM "动画缩放",                        ID_ANIMATION_SCALE
+        MENUITEM "无留白漫游(扩大绘制区域)",               ID_NO_BLANK_MOUSE_DRAG
+    END
+    POPUP "显示选项"
+    BEGIN
+        MENUITEM "显示全部信息",                      ID_SHOW_ALL_INFO
+        MENUITEM "显示标准信息",                      ID_SHOW_STANDARD_INFO, CHECKED
+        MENUITEM "显示基本信息",                      ID_SHOW_BASE_INFO
+        MENUITEM "图层显示选择",                      ID_SELEC_TLAYER_SHOW_INFO
+        MENUITEM SEPARATOR
+        POPUP "海图颜色模式"
+        BEGIN
+            MENUITEM "DAY BRIGHT",                  ID_COLOR_DAY_BRIGHT, CHECKED
+            MENUITEM "DAY WHITEBACK",               ID_COLOR_DAY_WHITEBACK
+            MENUITEM "DAY BLACKBACK",               ID_COLOR_DAY_BLACKBACK
+            MENUITEM "DAY DUSK",                    ID_COLOR_DAY_DUSK
+            MENUITEM "NIGHT",                       ID_COLOR_NIGHT
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "传统纸海图符号",                     ID_TRANDITION_SYMBOL_CHECK
+        MENUITEM "简单符号",                        ID_SIMPLE_SYMBOL_CHECK, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "安全线设定",                       ID_SAFETY_CONTOUR
+        MENUITEM "水深区颜色设定",                     ID_WATER_COLOR_SETTING
+        MENUITEM SEPARATOR
+        MENUITEM "中文显示",                        ID_SET_LANG_CHN, CHECKED
+        MENUITEM "英文显示",                        ID_SET_LANG_ENG
+        MENUITEM SEPARATOR
+        MENUITEM "显示文本",                        ID_SHOW_TEXT, CHECKED
+        MENUITEM "显示文字描边效果",                    ID_USE_OUTLINE_TEXT, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "设置经纬网格",                      ID_SET_GRID
+        MENUITEM "显示/隐藏网格",                     ID_GRID_SHOW, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "显示指北针",                       ID_SHOW_NORTH_ARROW, CHECKED
+        MENUITEM "显示比例尺尺标",                     ID_SHOW_SCALE_BAR, CHECKED
+        MENUITEM "显示图幅边框",                      ID_SHOW_FRAME, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "平滑画笔",                        ID_SMOOTH_PEN
+        MENUITEM "设置海图背景色",                     ID_SET_BACKGROUD
+    END
+    POPUP "图层操作"
+    BEGIN
+        MENUITEM "S57图层管理",                     ID_LAYERS_MAN
+        MENUITEM "VCF图层管理",                     ID_VCF_LAYER_MAN
+        MENUITEM "查询",                          ID_QUERY
+    END
+    POPUP "模拟监控控制"
+    BEGIN
+        MENUITEM "本船自动居中",                      ID_AUTO_CENTER_SHIP
+        MENUITEM "暂停模拟航行",                      ID_STOP_TIMER
+        MENUITEM "船首向上模式",                      ID_HEAD_UP
+        MENUITEM "报警门限设置",                      ID_ALARM_SETTING
+        MENUITEM "模拟参数控制",                      ID_EMULATE_SETTING
+        MENUITEM "保存历史轨迹",                      IDD_SAVE_HISTORY_TRACK
+        MENUITEM "轨迹查询",                        IDD_SEL_HISTORY_TRACK
+    END
+    POPUP "航线编辑"
+    BEGIN
+        MENUITEM "航线编辑模式",                      ID_ROUTE_EDIT_MODE
+        MENUITEM SEPARATOR
+        MENUITEM "添加航路点",                       ID_ADD_WAYPOINT
+        MENUITEM "删除航路点",                       ID_DEL_WAYPOINT
+        MENUITEM SEPARATOR
+        MENUITEM "添加航线",                        ID_ADD_ROUTE
+        MENUITEM "删除航线",                        ID_DEL_ROUTE
+        MENUITEM "编辑航线数据",                      ID_DIRECT_EDIT_ROUTE
+        MENUITEM SEPARATOR
+        MENUITEM "保存航线到文件",                     ID_SAVE_ROUTES
+        MENUITEM SEPARATOR
+        MENUITEM "航线安全检测",                      ID_ROUTE_SAFE_DETECT
+    END
+    POPUP "自定义海图编辑"
+    BEGIN
+        MENUITEM "选择编辑图层",                      ID_CHOSE_EDIT_USER_LAYER
+        MENUITEM SEPARATOR
+        POPUP "非综合图层编辑"
+        BEGIN
+            MENUITEM "添加图层物标",                      ID_ADD_USER_MAP_OBJECT
+            MENUITEM "删除图层物标",                      ID_DEL_OBJECT
+        END
+        POPUP "综合图层编辑"
+        BEGIN
+            MENUITEM "添加点",                         ID_ADD_POINT_OBJECT
+            MENUITEM "添加线",                         ID_ADD_LINE_OBJECT
+            MENUITEM "添加面",                         ID_ADD_FACE_OBJECT
+            MENUITEM "添加矩形",                        ID_ADD_RECTANGLE
+            MENUITEM "添加圆",                         ID_ADD_CIRCLE
+            MENUITEM "添加椭圆",                        ID_ADD_ELLIPSE
+            MENUITEM "添加弧",                         ID_ADD_ARC
+            MENUITEM "添加扇形",                        ID_ADD_PIE
+            MENUITEM "添加弓形",                        ID_ADD_BOW
+            MENUITEM "添加扇区",                        ID_ADD_SECTOR, INACTIVE
+            MENUITEM "添加曲线",                        ID_ADD_CURVE_LINE
+            MENUITEM "添加带箭头的曲线",                    ID_ADD_CURVE_WITH_ARROW
+            MENUITEM "添加带双箭头的曲线",                   ID_ADD_CURVE_WITH_BOTH_ARROW
+            MENUITEM "添加单箭头",                       ID_ADD_SINGLE_ARROW
+            MENUITEM "颜色衰减的多边形",                    ID_AddColorChangedFace
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "复制物标\tCtrl+C",                ID_COPY_OBJECT
+        MENUITEM "删除线或面的节点",                    ID_DEL_LINE_POINT
+        MENUITEM SEPARATOR
+        MENUITEM "撤消\tCtrl+Z",                  ID_UNDO
+        MENUITEM "重做\tCtrl+Y",                  ID_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "顺时针旋转\tCtrl+R",               ID_ROTATE_CLOCKWISE
+        MENUITEM "逆时针旋转\tCtrl+E",               ID_ROTATE_ANTICLOCKWISE
+        MENUITEM SEPARATOR
+        MENUITEM "放大\tCtrl+Q",                  ID_OBJ_ZOOM_IN
+        MENUITEM "缩小\tCtrl+W",                  ID_OBJ_ZOOM_OUT
+        MENUITEM SEPARATOR
+        MENUITEM "查看点形风格",                      ID_VIEW_POINT_STYLES
+        MENUITEM "查看线形风格",                      ID_VIEW_LIB_STYLES
+        MENUITEM "查看面形风格",                      ID_VIEW_FACE_STYLES
+        MENUITEM SEPARATOR
+        MENUITEM "保存标绘到文件",                     ID_SAVE_USER_MAP
+    END
+    POPUP "其他"
+    BEGIN
+        MENUITEM "地理计算",                        ID_GEO_CALC
+        MENUITEM "坐标转换",                        ID_SCRN_PLANE_GEO
+        MENUITEM "量程比例尺换算",                     ID_CACULATE_SCALE
+        MENUITEM "避碰报警计算",                      ID_Get_DTCPA
+        MENUITEM "计算多边形面积",                     ID_GET_AREA_REGION
+        MENUITEM SEPARATOR
+        MENUITEM "海图数据提取",                      ID_GET_DEP_INFO
+        MENUITEM "区域报警演示",                      ID_AREA_WARN
+        MENUITEM "近线、过线报警演示",                   ID_CLOSED_LINE_WARN
+        MENUITEM "九九方格演示",                      ID_ADD_NINE_BOX
+        MENUITEM "修改等深区域颜色",                    ID_SET_DEP_COLOR
+        MENUITEM SEPARATOR
+        MENUITEM "船舶压力演示",                      ID_ADD_SHIP
+        MENUITEM "标绘压力测试",                      ID_LAYER_OBJECT_TEST
+        MENUITEM SEPARATOR
+        MENUITEM "鹰眼视图",                        ID_GLOBAL_VIEW
+        MENUITEM "创建新海图",                       ID_ADD_NEW_MAP_CTRL
+        MENUITEM SEPARATOR
+        MENUITEM "显示雷达",                        ID_SHOW_RADAR
+        MENUITEM "截屏操作",                        ID_SAVE_SCRN_TO_BMP_FILE
+        MENUITEM "高亮水深区",                       ID_HIGHTLIGHT_DEPTHAREA
+        MENUITEM "修改ymc/ymp扩展名",                ID_SET_FILE_EXTENSION
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                     ID_TOOL_BAR
+        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
+        MENUITEM "显示刷新耗时",                      ID_SHOW_REFREASH_TIME, CHECKED
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 YimaEnc Viewer (&A)...",   ID_APP_ABOUT
+        MENUITEM "TestButtom",                  ID_ZCZ_TEST_BUTTOM
+    END
+END
+
+IDR_MENU_RADAR MENU
+BEGIN
+    POPUP "雷达右键菜单"
+    BEGIN
+        MENUITEM "雷达参数设置",                      ID_SET_RADAR
+        MENUITEM "删除雷达",                        ID_DELETE_RADAR
+        MENUITEM "修改雷达",                        ID_MODIFY_RADAR
+        MENUITEM "属性",                          ID_RADAR_PROPERTY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_COPY_OBJECT,         VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_GENERAL_QUERY,       VIRTKEY, CONTROL, NOINVERT
+    VK_DOWN,        ID_MOVE_DOWN,           VIRTKEY, CONTROL, NOINVERT
+    VK_LEFT,        ID_MOVE_LEFT,           VIRTKEY, CONTROL, NOINVERT
+    VK_RIGHT,       ID_MOVE_RIGHT,          VIRTKEY, CONTROL, NOINVERT
+    VK_UP,          ID_MOVE_UP,             VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    "Q",            ID_OBJ_ZOOM_IN,         VIRTKEY, CONTROL, NOINVERT
+    "W",            ID_OBJ_ZOOM_OUT,        VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "Y",            ID_REDO,                VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_ROTATE_ANTICLOCKWISE, VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_ROTATE_CLOCKWISE,    VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_UNDO,                VIRTKEY, CONTROL, NOINVERT
+    "+",            ID_ZOOM_IN,             ASCII,  NOINVERT
+    "-",            ID_ZOOM_OUT,            ASCII,  NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 343, 193
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 YimaEncNavigator"
+FONT 9, "宋体", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,11,21,21
+    LTEXT           "YimaEncNavigator 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2015 ~ 2018",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,286,7,50,14,WS_GROUP
+    CONTROL         "",IDC_YIMA_CTRL,"{18468C02-CE97-4311-B4ED-9776C8AA5FA1}",WS_TABSTOP,28,55,269,121
+END
+
+IDD_GEO_OBJECT_INFO_DLG DIALOGEX 0, 0, 359, 281
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Geo Object Properties"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,302,225,43,15
+    LTEXT           "Geo Type:",IDC_STATIC,6,12,35,9
+    EDITTEXT        IDC_GEO_OBJECT_TYPE,53,10,99,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Layer Name:",IDC_STATIC,156,12,46,11
+    EDITTEXT        IDC_LAYER_NAME,211,10,101,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Inner Layer Pos:",IDC_STATIC,156,30,53,10
+    EDITTEXT        IDC_INNER_LAYER_ID,211,28,101,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Layer Pos:",IDC_STATIC,7,30,37,9
+    EDITTEXT        IDC_LAYER_ID,53,28,99,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_MSFLEXGRID,"{6262D3A0-531B-11CF-91F6-C2863C385E30}",WS_TABSTOP,13,67,284,208
+    EDITTEXT        IDC_EDIT_MOVING,299,124,44,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCALE_MIN_EDIT,302,165,49,14,ES_AUTOHSCROLL
+    LTEXT           "自定义最小显示比例尺:",IDC_STATIC,303,143,49,19
+    PUSHBUTTON      "设置",IDC_SET_SCALEMIN_BUTTON,303,180,41,13
+    LTEXT           "Object Type:",IDC_STATIC_OBJ_TYPE,7,48,43,9
+    CONTROL         "实体物标",IDC_ENTITY_OBJECT_RADIO,"Button",BS_AUTORADIOBUTTON,55,48,48,10
+    CONTROL         "符号物标",IDC_SYSMBOL_OBJECT_RADIO,"Button",BS_AUTORADIOBUTTON,111,48,48,10
+    EDITTEXT        IDC_EDIT_AREA,196,48,80,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "面积:",IDC_STATIC_AREA,172,49,21,9
+    LTEXT           "平方公里",IDC_STATIC_AREA_UNIT,279,50,40,9
+END
+
+IDD_SEL_OBJECTS_DLG DIALOGEX 0, 0, 278, 132
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选中物标"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LISTBOX         IDC_SEL_OBJ_LIST,7,7,204,113,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "双击可查看对象属性.",IDC_STATIC,222,89,35,27
+    GROUPBOX        "提示: ",IDC_STATIC,216,79,45,41
+    PUSHBUTTON      "删除",IDC_DEL_BUTTON,222,35,40,14
+    PUSHBUTTON      "坐标提取",IDC_BTN_MODIFY_POSITION,222,14,40,14
+    CONTROL         "显示",IDC_CHK_IF_SHOW_OBJ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,224,56,32,10
+END
+
+IDD_SET_SCALE_DLG DIALOG 0, 0, 233, 79
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "指定比例尺"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,179,26,47,14
+    PUSHBUTTON      "取消",IDCANCEL,179,42,47,14
+    COMBOBOX        IDC_SEL_SCALE_COMBOX,7,22,129,132,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择比例尺:",IDC_STATIC,7,9,72,10
+    LTEXT           "指定比例尺:",IDC_STATIC,7,44,72,10
+    EDITTEXT        IDC_SCALE_EDIT,42,57,93,14,ES_AUTOHSCROLL
+    LTEXT           "1    ：",IDC_STATIC,11,60,24,10
+END
+
+IDD_SAFE_CONTOUR_DLG DIALOGEX 0, 0, 257, 87
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置安全线"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "水深分级:",IDC_STATIC,7,9,37,11
+    CONTROL         "2分水深区",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,49,8,52,10
+    CONTROL         "4分水深区",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,110,8,52,10
+    LTEXT           "浅水深度:",IDC_STATIC,7,29,37,11
+    EDITTEXT        IDC_SHALLOW_CONTOUR,50,26,70,14,ES_AUTOHSCROLL
+    LTEXT           "(单位: 米)",IDC_STATIC,126,29,39,11
+    LTEXT           "安全深度:",IDC_STATIC,7,47,37,11
+    EDITTEXT        IDC_SAFE_CONT,50,44,70,14,ES_AUTOHSCROLL
+    LTEXT           "(单位: 米)",IDC_STATIC,126,47,39,11
+    LTEXT           "深水深度:",IDC_STATIC,7,64,37,11
+    EDITTEXT        IDC_DEEP_CONTOUR,50,62,70,14,ES_AUTOHSCROLL
+    LTEXT           "(单位: 米)",IDC_STATIC,126,65,39,11
+    DEFPUSHBUTTON   "确定",IDOK,186,20,50,14
+    PUSHBUTTON      "取消",IDCANCEL,186,38,50,14
+END
+
+IDD_MAP_LIB_DLG DIALOG 0, 0, 398, 174
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "图库管理"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "确 定",IDOK,340,29,46,14
+    EDITTEXT        IDC_ORGN_SCALE_EDIT,224,12,94,15,ES_AUTOHSCROLL
+    LTEXT           "原始比例尺：",IDC_STATIC,172,16,51,12
+    LISTBOX         IDC_MAP_LIST,7,5,94,152,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "删 除",IDC_CLOSE_BUTTON,105,57,59,13
+    GROUPBOX        "范围",IDC_STATIC,173,82,148,83
+    LTEXT           "左边：",IDC_STATIC,179,93,28,9
+    EDITTEXT        IDC_LEFT_EDIT,209,90,103,15,ES_AUTOHSCROLL
+    LTEXT           "右边：",IDC_STATIC,179,112,24,9
+    LTEXT           "上边：",IDC_STATIC,179,128,24,9
+    LTEXT           "下边：",IDC_STATIC,179,148,24,9
+    EDITTEXT        IDC_RIGHT_EDIT,209,109,103,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_UP_EDIT,209,126,103,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DOWN_EDIT,209,144,103,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDTION_NUM_EDIT,224,31,94,15,ES_AUTOHSCROLL
+    LTEXT           "版本号：",IDC_STATIC,173,33,45,12
+    EDITTEXT        IDC_UPT_EDT_NUM_EDIT,224,49,94,15,ES_AUTOHSCROLL
+    LTEXT           "升级版本号：",IDC_STATIC,172,51,51,12
+    PUSHBUTTON      "添 加..",IDC_OPEN_MAP_BUTTON,105,22,59,13
+    GROUPBOX        "基本信息",IDC_STATIC,167,1,161,169
+    PUSHBUTTON      "概  览",IDC_OVERVIEW_BUTTON,105,86,59,13
+    PUSHBUTTON      "添加 S63 海图",IDC_ADD_S63_FILE_BUTTON,105,35,59,14
+    LTEXT           "设置最小显示比例尺:",IDC_STATIC,335,65,44,19
+    EDITTEXT        IDC_MAP_SHOW_MINSCALE_EDIT,335,85,49,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "设置",IDC_SET_MIN_SCALE_BUTTON,340,100,40,13
+    EDITTEXT        IDC_UPT_DATE_EDIT,224,65,94,15,ES_AUTOHSCROLL
+    LTEXT           "更新日期：",IDC_STATIC,172,67,51,12
+    PUSHBUTTON      "清空",IDC_CLEAR_BUTTON,105,71,59,13
+    LTEXT           "共0幅海图",IDC_STATIC_MAP_COUNT,7,159,95,8
+END
+
+IDD_LAYER_MAN_DLG DIALOGEX 0, 0, 162, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "图层管理"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LISTBOX         IDC_LAYER_LIST,6,5,91,135,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "确定",IDOK,106,84,45,15
+    CONTROL         "显示",IDC_SHOW_LAYER_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,7,50,12
+    PUSHBUTTON      "全部显示",ID_SHOW_ALL_LAYER_BUTTON,103,22,50,14
+    PUSHBUTTON      "全部不显示",ID_HIDE_ALL_LAYER_BUTTON,103,38,50,14
+END
+
+IDD_CENTER_ROTATE_DLG DIALOG 0, 0, 226, 62
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "中心点/旋转"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,180,13,39,13
+    PUSHBUTTON      "取消",IDCANCEL,180,30,39,13
+    EDITTEXT        IDC_CENTER_PO_X,36,7,68,12,ES_AUTOHSCROLL
+    LTEXT           "(单位: 度)",IDC_STATIC,114,9,43,11
+    LTEXT           "X:",IDC_STATIC,13,10,16,11
+    LTEXT           "Y:",IDC_STATIC,14,24,16,11
+    EDITTEXT        IDC_CENTER_PO_Y,36,22,68,12,ES_AUTOHSCROLL
+    LTEXT           "(单位: 度)",IDC_STATIC,114,23,43,11
+    LTEXT           "旋转:",IDC_STATIC,12,40,23,11
+    EDITTEXT        IDC_ROTATE_DEG,36,38,68,12,ES_AUTOHSCROLL
+    LTEXT           "(单位: 度)",IDC_STATIC,113,39,43,11
+END
+
+IDD_NAVIGATION_DLG DIALOGEX 0, 0, 127, 451
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LISTBOX         IDC_ROUTE_LIST,7,146,113,50,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "航线列表:",IDC_STATIC,6,136,43,9
+    LISTBOX         IDC_VESSEL_LIST,7,217,113,65,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "目标船列表:",IDC_STATIC,7,207,69,9
+    PUSHBUTTON      "设为模拟航线",IDC_SET_NAV_ROUTE_BUTTON,67,132,53,13
+    PUSHBUTTON      "删除",IDC_DEL_ROUTE_BTN,45,132,21,13
+    LTEXT           "雷达列表:",IDC_STATIC,7,7,43,9
+    CONTROL         "",IDC_RADAR_LIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,17,113,98
+END
+
+IDD_ROUTE_EDIT_DLG DIALOG 0, 0, 237, 205
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "航线编辑"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,191,24,39,13
+    EDITTEXT        IDC_ROUTE_NAME_EDIT,53,9,87,12,ES_AUTOHSCROLL
+    LTEXT           "航线名称:",IDC_STATIC,7,11,38,11
+    CONTROL         "",IDC_ROUTE_WP_GRID,
+                    "{6262D3A0-531B-11CF-91F6-C2863C385E30}",WS_TABSTOP,7,41,178,157
+    PUSHBUTTON      "添加航路点",IDC_ADD_WAY_POINT_BTN,7,28,54,12
+    PUSHBUTTON      "删除航路点",IDC_DEL_WAY_POINT_BTN,65,28,55,12
+    PUSHBUTTON      "取消",IDCANCEL,191,43,39,13
+END
+
+IDD_ALARM_SETTING_DLG DIALOGEX 0, 0, 207, 160
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "报警设置"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确 定",IDOK,70,140,39,13
+    LTEXT           "距离危险点报警门限：",IDC_STATIC,8,10,96,13
+    EDITTEXT        IDC_ISO_DANGER_DIST_DOOR,112,9,60,14,ES_AUTOHSCROLL
+    LTEXT           "(米)",IDC_STATIC,179,13,20,9
+    LTEXT           "距离安全线报警门限：",IDC_STATIC,8,28,96,13
+    EDITTEXT        IDC_SAFE_CONTOUR_DIST_DOOR,112,26,60,14,ES_AUTOHSCROLL
+    LTEXT           "偏离航线距离报警门限：",IDC_STATIC,8,46,96,13
+    EDITTEXT        IDC_OFF_ROUTE_DIST_DOOR,112,43,60,14,ES_AUTOHSCROLL
+    LTEXT           "(米)",IDC_STATIC,179,30,20,9
+    LTEXT           "(米)",IDC_STATIC,179,48,20,9
+    LTEXT           "船舶水深超深报警门限：",IDC_STATIC,8,82,96,13
+    LTEXT           "船舶水深超浅报警门限：",IDC_STATIC,8,64,96,13
+    EDITTEXT        IDC_SHALLOW_DEPTH_DOOR,112,60,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DEEP_DEPTH_DOOR,112,77,60,14,ES_AUTOHSCROLL
+    LTEXT           "(米)",IDC_STATIC,179,64,20,9
+    LTEXT           "(米)",IDC_STATIC,179,80,20,9
+    LTEXT           "避碰距离报警门限：",IDC_STATIC,8,117,96,13
+    EDITTEXT        IDC_EDIT_TCPA_DOOR,112,96,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DCPA_DOOR,112,115,60,14,ES_AUTOHSCROLL
+    LTEXT           "避碰时间报警门限：",IDC_STATIC,8,99,96,13
+    LTEXT           "(秒)",IDC_STATIC,179,98,20,9
+    LTEXT           "(米)",IDC_STATIC,179,117,20,9
+END
+
+IDD_EMULATE_PARAM_DLG DIALOGEX 0, 0, 239, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "模拟参数设置"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,169,12,41,14
+    PUSHBUTTON      "取消",IDCANCEL,169,30,41,14
+    LTEXT           "刷新时间间隔：",IDC_STATIC,13,11,64,11
+    EDITTEXT        IDC_CLOCK_INTERVAL,78,9,47,12,ES_AUTOHSCROLL
+    LTEXT           "(毫秒)",IDC_STATIC,128,11,27,10
+    LTEXT           "航速：",IDC_STATIC,14,30,56,11
+    EDITTEXT        IDC_SPEED,78,26,47,12,ES_AUTOHSCROLL
+    LTEXT           "(节)",IDC_STATIC,128,27,27,10
+    CONTROL         "显示航速时间刻度",IDC_SPEED_TIME_MARK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,79,98,11
+    CONTROL         "显示本船船首线",IDC_SHOW_HEADLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,99,77,11
+    GROUPBOX        "目标显示设置(包括本船、目标船)",IDC_STATIC,7,47,206,68
+    CONTROL         "显示船舶速度向量",IDC_SHOW_SPEED_VECTOR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,59,77,11
+    EDITTEXT        IDC_EDIT_MAX_STORE_COUNT,95,131,56,14,ES_AUTOHSCROLL
+    LTEXT           "最大存储轨迹点：",IDC_STATIC,19,134,65,8
+    EDITTEXT        IDC_EDIT_MAX_SHOW_COUNT,95,148,56,14,ES_AUTOHSCROLL
+    LTEXT           "最大显示轨迹点：",IDC_STATIC,19,152,65,8
+    EDITTEXT        IDC_EDIT_MAX_STORE_TIME,95,165,56,14,ES_AUTOHSCROLL
+    LTEXT           "最长存储轨迹时间：",IDC_STATIC,19,169,73,8
+    LTEXT           "分钟",IDC_STATIC,161,166,17,8
+    GROUPBOX        "轨迹点设置（只设置本船）",IDC_STATIC,7,120,193,62
+END
+
+IDD_USER_LAYER_DLG DIALOGEX 0, 0, 307, 193
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "编辑图层选择"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "选定返回",IDOK,217,71,49,17
+    PUSHBUTTON      "取消",IDCANCEL,217,98,49,17
+    LISTBOX         IDC_USER_MAP_LAYER_LIST,7,6,80,180,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "图层类型:",IDC_STATIC,95,35,36,11
+    EDITTEXT        IDC_EDIT_LAYER_NAME,139,15,85,12,ES_AUTOHSCROLL
+    LTEXT           "图层名称:",IDC_STATIC,95,17,37,11
+    CONTROL         "显示",IDC_SHOW_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,95,52,36,16
+    PUSHBUTTON      "新建图层",IDC_NEW_LAYER_BUTTON,237,150,49,17
+    PUSHBUTTON      "保存修改",IDC_SAVE_NAME_BUTTON,231,15,49,17
+    PUSHBUTTON      "删除图层",IDC_DEL_LAYER_BUTTON,95,82,49,17
+    GROUPBOX        "新图层",IDC_STATIC,89,128,211,58
+    LTEXT           "选择图层类型：",IDC_STATIC,96,154,52,8
+    EDITTEXT        IDC_EDIT3,139,34,85,12,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_COMBO1,153,151,56,75,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_QUERY_DIALOG DIALOG 0, 0, 340, 169
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "物标搜索"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,278,41,50,14
+    LISTBOX         IDC_SEL_OBJ_LIST,7,28,268,132,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "提示: ",IDC_STATIC,280,65,41,44
+    LTEXT           "双击可查看对象属性.",IDC_STATIC,285,76,34,29
+    EDITTEXT        IDC_KEY_WORDS_EDIT,160,9,90,13,ES_AUTOHSCROLL
+    LTEXT           "输入关键字(如有多个关键词请用空格隔开) : ",IDC_STATIC,5,11,154,12
+    DEFPUSHBUTTON   "搜索",IDC_QUERY_BUTTON,251,9,36,13
+END
+
+IDD_LIB_STYLES_DIALOG DIALOGEX 0, 0, 559, 314
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置线型风格"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,419,290,52,17
+    PUSHBUTTON      "取消",IDCANCEL,480,290,50,17
+    GROUPBOX        "参考图库复杂线型风格： Line Styles",IDC_STATIC,7,43,378,264
+    EDITTEXT        IDC_SEL_LIB_LINESTYLE_ID,439,46,70,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "颜色",IDC_COLOR_BTN,436,72,23,13
+    EDITTEXT        IDC_LS_WIDTH,479,97,30,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LS_COLOR_R,470,72,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LS_COLOR_G,499,72,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LS_COLOR_B,531,72,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,460,74,8,13
+    LTEXT           "G:",IDC_STATIC,491,74,8,13
+    LTEXT           "B:",IDC_STATIC,521,74,8,13
+    LTEXT           "线宽:",IDC_STATIC,457,99,20,13
+    LTEXT           "参考线型ID:",IDC_STATIC,390,47,42,13
+    PUSHBUTTON      "刷新样图",IDC_DEMO_SHOW_BTN,435,117,68,14
+    GROUPBOX        "样图",IDC_STATIC,390,134,162,39
+    CONTROL         "设置线宽",IDC_SET_WIDTH_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,391,99,47,9
+    CONTROL         "设置颜色",IDC_SET_COLOR_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,390,74,47,9
+    LTEXT           "(像素)",IDC_STATIC,512,99,40,13
+    PUSHBUTTON      "上一页",IDC_PAGEUP_BUTTON,190,242,48,14
+    PUSHBUTTON      "下一页",IDC_PAGE_DOWN_BUTTON,260,241,48,14
+    EDITTEXT        IDC_LINE_TEXT,444,194,90,14,ES_AUTOHSCROLL
+    LTEXT           "标注文字:",IDC_STATIC,401,196,35,10
+    GROUPBOX        "标注",IDC_STATIC,390,179,162,105
+    PUSHBUTTON      "选择字体",IDC_FONT_BUTTON,401,212,40,13
+    EDITTEXT        IDC_FONT_NAME,444,212,38,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "文字颜色",IDC_TEXT_COLOR_BUTTON,401,230,40,13
+    EDITTEXT        IDC_FONT_COLOR_R3,457,230,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FONT_COLOR_G3,487,230,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FONT_COLOR_B3,516,230,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,444,232,8,13
+    LTEXT           "G:",IDC_STATIC,479,232,8,13
+    LTEXT           "B:",IDC_STATIC,507,232,8,13
+    LTEXT           "偏移X:",IDC_STATIC,443,248,24,13
+    EDITTEXT        IDC_TEXT_OFFSETX,468,246,19,12,ES_AUTOHSCROLL
+    LTEXT           "偏移Y:",IDC_STATIC,490,248,23,13
+    EDITTEXT        IDC_TEXT_OFFSETY,514,245,20,14,ES_AUTOHSCROLL
+    LTEXT           "字高:",IDC_STATIC,403,248,18,13
+    EDITTEXT        IDC_TEXT_SIZE,422,246,19,12,ES_AUTOHSCROLL
+    CONTROL         "沿线显示",IDC_CHECK_TEXT_ALONG_WITH_LINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,489,212,45,12
+    LTEXT           "基本线型风格：",IDC_STATIC,7,7,90,9
+    EDITTEXT        IDC_LINE_WIDTH_EDIT,303,21,44,13,ES_AUTOHSCROLL
+    CONTROL         "实线",IDC_SOLID_LINE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,22,39,10
+    CONTROL         "虚线",IDC_DASH_LINE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,47,22,33,10
+    LTEXT           "线宽:",IDC_STATIC,277,23,21,8
+    PUSHBUTTON      "颜色",IDC_SETCOLOR_BTN,402,20,23,13
+    EDITTEXT        IDC_LN_BS_COLOR_R,438,20,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LN_BS_COLOR_G,468,20,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LN_BS_COLOR_B,500,20,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,428,22,8,13
+    LTEXT           "G:",IDC_STATIC,460,22,8,13
+    LTEXT           "B:",IDC_STATIC,490,22,8,13
+    CONTROL         "设置颜色",IDC_BESET_COLOR_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,353,22,47,9
+    EDITTEXT        IDC_DASH_CYCLE_EDIT,139,21,44,13,ES_AUTOHSCROLL
+    LTEXT           "虚线长度周期:",IDC_STATIC,85,23,54,8
+    EDITTEXT        IDC_DASH_LEN_EDIT,225,21,44,13,ES_AUTOHSCROLL
+    LTEXT           "虚线线长:",IDC_STATIC,187,23,34,8
+    EDITTEXT        IDC_EDIT_LINETEXT_ROTATE_ANGLE,448,264,37,14,ES_AUTOHSCROLL
+    LTEXT           "文字旋转：",IDC_STATIC,403,266,41,8
+    LTEXT           "（-90°至90°）",IDC_STATIC,490,267,48,8
+END
+
+IDD_POINT_STYLES_DIALOG DIALOGEX 0, 0, 544, 278
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "图库点型风格"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,409,254,52,17
+    PUSHBUTTON      "取消",IDCANCEL,476,254,50,17
+    GROUPBOX        "Point Styles",IDC_STATIC,7,7,378,264
+    EDITTEXT        IDC_SEL_LIB_POINTSTYLE_ID,441,15,70,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "颜色",IDC_COLOR_BTN,434,42,22,13
+    EDITTEXT        IDC_SYMBOL_ZOOM_RATIO,482,65,52,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POINT_COLOR_R,466,43,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POINT_COLOR_G,493,43,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POINT_COLOR_B,522,43,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,457,44,8,13
+    LTEXT           "G:",IDC_STATIC,485,44,8,13
+    LTEXT           "B:",IDC_STATIC,513,44,8,13
+    LTEXT           "比例:",IDC_STATIC,456,68,22,13
+    LTEXT           "选择符号ID:",IDC_STATIC,395,17,42,13
+    PUSHBUTTON      "刷新符号样图",IDC_DEMO_SHOW_BTN,425,83,68,14
+    GROUPBOX        "样图",IDC_STATIC,389,98,145,40
+    PUSHBUTTON      "上一页",IDC_PAGE_UP_BUTTON,207,236,43,15
+    PUSHBUTTON      "下一页",IDC_PAGE_DOWN_BUTTON,279,237,43,15
+    CONTROL         "设置颜色",IDC_SET_COLOR_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,387,43,45,12
+    CONTROL         "设置缩放比例",IDC_SET_RATIO_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,387,66,66,12
+    EDITTEXT        IDC_TEXT,443,156,88,14,ES_AUTOHSCROLL
+    LTEXT           "标注文字:",IDC_STATIC,398,158,37,12
+    GROUPBOX        "标注",IDC_STATIC,390,142,146,106
+    PUSHBUTTON      "选择字体",IDC_FONT_BUTTON,398,176,40,13
+    EDITTEXT        IDC_FONT_NAME,443,175,89,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "文字颜色",IDC_TEXT_COLOR_BUTTON,398,193,40,13
+    EDITTEXT        IDC_FONT_COLOR_R,454,193,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FONT_COLOR_G,484,193,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FONT_COLOR_B,513,193,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,443,195,8,13
+    LTEXT           "G:",IDC_STATIC,476,195,8,13
+    LTEXT           "B:",IDC_STATIC,505,195,8,13
+    LTEXT           "偏移X:",IDC_STATIC,440,211,24,13
+    EDITTEXT        IDC_TEXT_OFFSETX,465,209,19,12,ES_AUTOHSCROLL
+    LTEXT           "偏移Y:",IDC_STATIC,487,211,23,13
+    EDITTEXT        IDC_TEXT_OFFSETY,512,208,20,14,ES_AUTOHSCROLL
+    LTEXT           "字高:",IDC_STATIC,400,211,18,13
+    EDITTEXT        IDC_TEXT_SIZE,419,209,19,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TEXT_ROTATE_ANGLE,443,229,37,14,ES_AUTOHSCROLL
+    LTEXT           "文字旋转：",IDC_STATIC,398,231,41,8
+    LTEXT           "（-90°至90°）",IDC_STATIC,485,232,48,8
+END
+
+IDD_FACE_STYLES_DIALOG DIALOGEX 0, 0, 561, 306
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "图库面型风格"
+FONT 8, "Microsoft Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,421,282,52,17
+    PUSHBUTTON      "取消",IDCANCEL,481,282,50,17
+    GROUPBOX        "Face Styles",IDC_STATIC,7,7,373,292
+    EDITTEXT        IDC_SEL_LIB_FACESTYLE_ID,438,15,70,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "颜色",IDC_COLOR_BTN,435,32,21,13
+    EDITTEXT        IDC_FACE_COLOR_R,468,32,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FACE_COLOR_G,500,32,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FACE_COLOR_B,533,32,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,458,34,8,13
+    LTEXT           "G:",IDC_STATIC,490,34,8,13
+    LTEXT           "B:",IDC_STATIC,522,34,8,13
+    LTEXT           "选定面型ID:",IDC_STATIC,384,17,42,13
+    PUSHBUTTON      "刷新样图",IDC_DEMO_SHOW_BTN,437,82,68,14
+    GROUPBOX        "样图",IDC_STATIC,383,102,164,49
+    CONTROL         "设置填充色",IDC_SET_COLOR_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,382,33,52,11
+    PUSHBUTTON      "颜色",IDC_COLOR_BTN2,435,64,21,13
+    EDITTEXT        IDC_FACE_PAT_COLOR_R,468,64,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FACE_PAT_COLOR_G,500,64,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FACE_PAT_COLOR_B,533,64,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,458,64,8,13
+    LTEXT           "G:",IDC_STATIC,490,64,8,13
+    LTEXT           "B:",IDC_STATIC,522,64,8,13
+    CONTROL         "设置符号色",IDC_SET_PATTERN_COLOR_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,382,65,52,11
+    CONTROL         "设置填充透明度",IDC_SET_COLOR_TRANS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,382,48,74,11
+    EDITTEXT        IDC_TXT_FILL_TRANSP,459,48,29,12,ES_AUTOHSCROLL
+    LTEXT           "(1~100)",IDC_STATIC,492,49,27,9
+    EDITTEXT        IDC_FACE_TEXT,440,172,100,14,ES_AUTOHSCROLL
+    LTEXT           "标注文字:",IDC_STATIC,392,175,37,12
+    GROUPBOX        "标注",IDC_STATIC,383,159,164,119
+    PUSHBUTTON      "选择字体",IDC_FONT_BUTTON,392,191,40,13
+    EDITTEXT        IDC_FONT_NAME2,440,191,100,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "文字颜色",IDC_TEXT_COLOR_BUTTON,392,209,40,13
+    EDITTEXT        IDC_FONT_COLOR_R2,454,209,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FONT_COLOR_G2,488,209,18,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FONT_COLOR_B2,522,209,18,12,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,440,210,10,13
+    LTEXT           "G:",IDC_STATIC,476,211,12,13
+    LTEXT           "B:",IDC_STATIC,510,211,11,13
+    LTEXT           "偏移X:",IDC_STATIC,440,227,24,13
+    EDITTEXT        IDC_TEXT_OFFSETX2,465,225,19,12,ES_AUTOHSCROLL
+    LTEXT           "偏移Y:",IDC_STATIC,491,227,23,13
+    EDITTEXT        IDC_TEXT_OFFSETY2,520,224,20,14,ES_AUTOHSCROLL
+    LTEXT           "字高:",IDC_STATIC,392,227,18,13
+    EDITTEXT        IDC_TEXT_SIZE2,416,225,22,12,ES_AUTOHSCROLL
+    CONTROL         "标注在物标中心",IDC_TEXT_ON_CENTER_RADIO,"Button",BS_AUTORADIOBUTTON,392,243,72,10
+    CONTROL         "标注在物标下方",IDC_TEXT_ON_BOTTOM_RADIO,"Button",BS_AUTORADIOBUTTON,473,243,67,10
+    EDITTEXT        IDC_EDIT_FACETEXT_ROTATE_ANGLE,439,259,37,14,ES_AUTOHSCROLL
+    LTEXT           "文字旋转：",IDC_STATIC,392,261,41,8
+    LTEXT           "（-90°至90°）",IDC_STATIC,481,262,48,8
+END
+
+IDD_GEO_CALC_DLG DIALOGEX 0, 0, 255, 229
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "地理计算"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_GEO_PO1_X,75,20,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GEO_PO1_Y,173,20,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GEO_PO2_X,75,44,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GEO_PO2_Y,173,44,48,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "计算",IDC_BUTTON_CACULATE,179,74,36,15
+    EDITTEXT        IDC_EDIT_RESULT,74,68,65,13,ES_AUTOHSCROLL
+    LTEXT           "起点:",IDC_STATIC,12,22,38,10
+    LTEXT           "纬度:",IDC_STATIC,148,22,21,10
+    LTEXT           "终点:",IDC_STATIC,12,45,39,10
+    LTEXT           "纬度:",IDC_STATIC,148,45,21,10
+    LTEXT           "距离（海里）:",IDC_STATIC,12,71,53,10
+    LTEXT           "经度:",IDC_STATIC,53,22,21,10
+    EDITTEXT        IDC_EDIT_RESULT2,74,87,65,13,ES_AUTOHSCROLL
+    LTEXT           "角度（度）:",IDC_STATIC,18,87,53,10
+    LTEXT           "经度:",IDC_STATIC,52,45,22,10
+    LTEXT           "(度)",IDC_STATIC,123,22,16,10
+    LTEXT           "(度)",IDC_STATIC,123,45,16,10
+    LTEXT           "(度)",IDC_STATIC,224,21,16,10
+    LTEXT           "(度)",IDC_STATIC,224,45,16,10
+    GROUPBOX        "计算距离与角度",IDC_STATIC,7,6,241,105
+    GROUPBOX        "计算点",IDC_STATIC,7,107,241,115
+    EDITTEXT        IDC_EDIT_GEO_PO1_X2,75,121,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GEO_PO1_Y2,173,121,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GEO_PO2_X2,76,196,48,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GEO_PO2_Y2,174,196,48,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "计算",IDC_BUTTON_GET_POINT,179,156,36,15
+    EDITTEXT        IDC_EDIT_RESULT3,73,145,65,13,ES_AUTOHSCROLL
+    LTEXT           "已知点:",IDC_STATIC,12,123,37,10
+    LTEXT           "纬度:",IDC_STATIC,148,123,21,10
+    LTEXT           "结果点:",IDC_STATIC,13,197,35,10
+    LTEXT           "纬度:",IDC_STATIC,149,197,21,10
+    LTEXT           "距离（海里）:",IDC_STATIC,11,147,53,10
+    LTEXT           "经度:",IDC_STATIC,53,123,21,10
+    EDITTEXT        IDC_EDIT_RESULT4,73,166,65,13,ES_AUTOHSCROLL
+    LTEXT           "角度（度）:",IDC_STATIC,17,167,53,10
+    LTEXT           "经度:",IDC_STATIC,53,197,22,10
+    LTEXT           "(度)",IDC_STATIC,123,123,16,10
+    LTEXT           "(度)",IDC_STATIC,124,197,16,10
+END
+
+IDD_USER_DEFINE_MAPLAYER_DLG DIALOG 0, 0, 263, 130
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "自定义显示模式对话框"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,206,94,50,14
+    PUSHBUTTON      "取消",IDCANCEL,206,109,50,14
+    LISTBOX         IDC_LAYER_OBJECT_LIST,19,29,72,88,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_USERLAYER_OBJECT_LIST,134,28,72,87,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加",IDC_ADDTOLAYER_BTN,93,42,38,14
+    PUSHBUTTON      "删除",IDC_DELETEROMLAYER_BTN,93,68,38,14
+    COMBOBOX        IDC_USERLAYR_SELECT_COMBOX,135,7,71,55,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择显示模式",IDC_SELECT_USERLAYER_TEXT,79,11,54,12
+    LTEXT           "图层列表:",IDC_LAYERLIST_TEXT,14,18,35,8
+END
+
+IDD_MAPLAYER_SHOW_DLG DIALOG 0, 0, 239, 139
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "图层显示对话框"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,127,118,50,14
+    PUSHBUTTON      "取消",IDCANCEL,182,118,50,14
+    GROUPBOX        "S52显示",IDC_S52MAP_SHOW_TEXT,7,7,225,41
+    GROUPBOX        "用户定义显示模式",IDC_USERMAP_SHOW_TEXT,7,57,225,50
+    CONTROL         "",IDC_S52MAPSHOW_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,22,16,8
+    CONTROL         "",IDC_USERMAPSHOW_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,76,16,8
+    CONTROL         "显示标准信息",IDC_S52STANDARDMAP_RADIO,"Button",BS_AUTORADIOBUTTON,38,21,60,10
+    CONTROL         "显示基本信息",IDC_S52BASICMAP_RADIO,"Button",BS_AUTORADIOBUTTON,103,22,60,10
+    CONTROL         "显示全部信息",IDC_S52ALLMAP_RADIO,"Button",BS_AUTORADIOBUTTON,169,22,60,10
+    CONTROL         "显示标准信息",IDC_USERSTANDARD_RADIO,"Button",BS_AUTORADIOBUTTON,38,76,60,10
+    CONTROL         "显示基本信息",IDC_USERBASIC_RADIO,"Button",BS_AUTORADIOBUTTON,104,76,60,10
+    CONTROL         "显示全部信息",IDC_USERFULLMAP_RADIO,"Button",BS_AUTORADIOBUTTON,172,77,60,10
+    PUSHBUTTON      "编辑",IDC_USERMAPEDIT_BTN,182,93,50,14
+END
+
+IDD_PRINT_TITLE_DLG DIALOG 0, 0, 230, 162
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "打印标题和备注设置对话框"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,113,141,50,14
+    PUSHBUTTON      "取消",IDCANCEL,173,141,50,14
+    EDITTEXT        IDC_PRINT_TITLE_EDIT,51,7,134,14,ES_AUTOHSCROLL
+    LTEXT           "打印标题:",IDC_PRINT_TITLE_TEXT,10,10,35,8
+    CONTROL         "居左",IDC_TITLE_ALIGN_LEFT_RADIO,"Button",BS_AUTORADIOBUTTON,20,25,32,10
+    CONTROL         "居中",IDC_TITLE_ALIGN_MIDDLE_RADIO,"Button",BS_AUTORADIOBUTTON,79,25,32,10
+    CONTROL         "居右",IDC_TITLE_ALIGN_RIGHT_RADIO,"Button",BS_AUTORADIOBUTTON,137,26,32,10
+    LTEXT           "备注：",IDC_REMARK_TEXT,26,46,25,8
+    EDITTEXT        IDC_REMARK_EDIT,52,43,134,14,ES_AUTOHSCROLL
+    CONTROL         "居左",IDC_REMARK_LEFT_RADIO,"Button",BS_AUTORADIOBUTTON,19,66,32,10
+    CONTROL         "居中",IDC_REMARK_MIDDLE_RADIO,"Button",BS_AUTORADIOBUTTON,81,66,32,10
+    CONTROL         "居右",IDC_REMARK_RIGHT_RADIO,"Button",BS_AUTORADIOBUTTON,138,65,32,10
+    LTEXT           "比例尺显示设置：",IDC_STATIC,19,87,65,8
+    CONTROL         "居左",IDC_SCALE_LEFT_RADIO,"Button",BS_AUTORADIOBUTTON,19,106,32,10
+    CONTROL         "居中",IDC_SCALE_MIDDLE_RADIO,"Button",BS_AUTORADIOBUTTON,86,107,32,10
+    CONTROL         "居右",IDC_SCALE_RIGHT_RADIO,"Button",BS_AUTORADIOBUTTON,143,109,32,10
+    PUSHBUTTON      "Font",IDC_TITLE_FONT_BTN,194,7,29,14
+    PUSHBUTTON      "Font",IDC_REMARK_FONT_BTN,195,42,28,14
+END
+
+IDD_S63_FILE_DIALOG DIALOG 0, 0, 269, 79
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "S63文件打开"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,212,29,50,14
+    EDITTEXT        IDC_S63_PERMIT_FILE_PATH_EDIT,60,16,90,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_S63_CELL_FILE_PATH_EDIT,60,45,90,13,ES_AUTOHSCROLL
+    LTEXT           "Permit文件：",IDC_STATIC,7,17,49,10
+    LTEXT           "Cell文件：",IDC_STATIC,7,47,36,10
+    PUSHBUTTON      "选择..",IDC_OPEN_PERMIT_FILE_BUTTON,159,16,32,13
+    PUSHBUTTON      "选择..",IDC_OPEN_S63_CELL_FILE_BUTTON,159,44,32,13
+END
+
+IDD_SET_DEVICE_ID_DIALOG DIALOG 0, 0, 201, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置S63 设备ID"
+FONT 10, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,46,26,35,15
+    PUSHBUTTON      "取消",IDCANCEL,102,26,35,15
+    EDITTEXT        IDC_DEVIC_ID_EDIT,73,4,56,14,ES_AUTOHSCROLL
+    LTEXT           "设置S63 设备ID:",IDC_STATIC,7,8,60,10
+    LTEXT           "(请输入5位数字)",IDC_STATIC,133,9,60,10
+END
+
+IDD_HIGHLIGHT_DEPTHAREA_DIALOG DIALOG 0, 0, 258, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "高亮深水区"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,190,13,42,14
+    PUSHBUTTON      "取消",IDCANCEL,190,33,43,14
+    EDITTEXT        IDC_DEPTH1_EDIT,55,13,34,12,ES_AUTOHSCROLL
+    LTEXT           " 深度范围：",IDC_STATIC,7,16,47,10
+    LTEXT           "米",IDC_STATIC,91,16,13,10
+    LTEXT           "到",IDC_STATIC,105,16,13,10
+    EDITTEXT        IDC_DEPTH2_EDIT,123,13,34,12,ES_AUTOHSCROLL
+    LTEXT           "米",IDC_STATIC,160,15,13,10
+    LTEXT           "填充颜色：",IDC_STATIC,11,33,41,10
+    PUSHBUTTON      "颜色",IDC_COLOR_BTN,53,31,22,14
+    EDITTEXT        IDC_FILL_COLOR_R,85,31,18,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILL_COLOR_G,113,31,18,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FILL_COLOR_B,141,31,18,13,ES_AUTOHSCROLL
+    LTEXT           "R:",IDC_STATIC,77,33,8,14
+    LTEXT           "G:",IDC_STATIC,105,33,8,14
+    LTEXT           "B:",IDC_STATIC,133,33,8,14
+END
+
+IDD_CHG_DPTH_LN_DLG DIALOG 0, 0, 265, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "改变等深线深度"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,202,7,43,15
+    PUSHBUTTON      "取消",IDCANCEL,202,25,43,15
+    EDITTEXT        IDC_DEPTH_CHG_VAL,47,14,59,15,ES_AUTOHSCROLL
+    LTEXT           "(单位: 米,可为负数)",IDC_STATIC,110,18,79,13
+    LTEXT           "深度调整:",IDC_STATIC,6,18,39,9
+END
+
+IDD_SET_GRID_DIALOG DIALOGEX 0, 0, 354, 114
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置经纬网格"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,95,86,50,14
+    PUSHBUTTON      "取消",IDCANCEL,154,86,50,14
+    EDITTEXT        IDC_SAFE_CONT,53,14,70,14,ES_AUTOHSCROLL
+    LTEXT           "网格密度:",IDC_STATIC,12,16,37,11
+    LTEXT           "(屏幕内有几根线)",IDC_STATIC,127,16,63,11
+    PUSHBUTTON      "设置网格线颜色",IDC_GRID_LINE_COLOR_BTN,10,33,72,16
+    PUSHBUTTON      "设置经度文字颜色",IDC_LON_TEXT_COLOR_BTN,90,34,88,16
+    PUSHBUTTON      "设置纬度文字颜色",IDC_LAT_TEXT_COLOR_BTN,187,34,88,16
+    EDITTEXT        IDC_SAFE_CONT2,76,59,70,14,ES_AUTOHSCROLL
+    LTEXT           "经纬度文字大小:",IDC_STATIC,11,61,61,11
+    DEFPUSHBUTTON   "应用",IDAPPLY,36,86,50,14
+END
+
+IDD_SCRN_PLANE_GEO_DLG DIALOGEX 0, 0, 255, 192
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "坐标换算"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,145,171,36,14
+    PUSHBUTTON      "取消",IDCANCEL,216,171,37,14
+    GROUPBOX        "屏幕坐标",IDC_STATIC,6,19,247,46
+    GROUPBOX        "平面坐标",IDC_STATIC,6,70,247,42
+    GROUPBOX        "经纬度坐标",IDC_STATIC,6,124,247,45
+    EDITTEXT        IDC_EDIT_SCRNX,34,38,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SCRNY,136,38,54,14,ES_AUTOHSCROLL
+    LTEXT           "X值:",IDC_STATIC,16,41,14,8
+    LTEXT           "(px)",IDC_STATIC,91,41,14,8
+    LTEXT           "Y值:",IDC_STATIC,119,41,15,8
+    LTEXT           "(px)",IDC_STATIC,194,41,14,8
+    PUSHBUTTON      "计算",IDC_BUTTON_BY_SCRN,215,38,32,14
+    EDITTEXT        IDC_EDIT_PLANEX,34,89,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PLANEY,136,89,54,14,ES_AUTOHSCROLL
+    LTEXT           "X值:",IDC_STATIC,16,92,14,8
+    LTEXT           "(分米)",IDC_STATIC,91,92,20,8
+    LTEXT           "Y值:",IDC_STATIC,119,92,15,8
+    LTEXT           "(分米)",IDC_STATIC,194,92,20,8
+    PUSHBUTTON      "计算",IDC_BUTTON_BY_PLANE,215,89,32,14
+    EDITTEXT        IDC_EDIT_LON,34,143,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LAT,136,143,54,14,ES_AUTOHSCROLL
+    LTEXT           "经度:",IDC_STATIC,16,146,17,8
+    LTEXT           "(度)",IDC_STATIC,91,146,14,8
+    LTEXT           "纬度:",IDC_STATIC,118,146,17,8
+    LTEXT           "(度)",IDC_STATIC,194,146,14,8
+    PUSHBUTTON      "计算",IDC_BUTTON_BY_LONLAT,215,143,32,14
+    LTEXT           "说明:点击对应的【计算】按钮，将会根据当前的坐标换算出其他两个坐标。",IDC_STATIC,9,3,244,8
+END
+
+IDD_GET_DCPA_TCPA_DLG DIALOGEX 0, 0, 231, 184
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "避碰计算"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "计算",IDOK,177,138,34,14
+    PUSHBUTTON      "取消",IDCANCEL,177,159,35,14
+    GROUPBOX        "本船",IDC_STATIC,7,7,218,53
+    LTEXT           "经度:",IDC_STATIC,13,21,17,8
+    LTEXT           "纬度:",IDC_STATIC,125,21,17,8
+    LTEXT           "(度)",IDC_STATIC,92,21,14,8
+    LTEXT           "(度)",IDC_STATIC,203,21,14,8
+    LTEXT           "速度:",IDC_STATIC,13,44,17,8
+    LTEXT           "(节)",IDC_STATIC,92,44,14,8
+    LTEXT           "航向:",IDC_STATIC,125,44,17,8
+    LTEXT           "(度)",IDC_STATIC,203,44,14,8
+    EDITTEXT        IDC_EDIT_LON1,32,18,57,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LAT1,142,18,57,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COURSE1,142,42,57,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SPEED1,32,42,57,14,ES_AUTOHSCROLL
+    GROUPBOX        "目标船",IDC_STATIC,7,68,218,53
+    LTEXT           "经度:",IDC_STATIC,13,82,17,8
+    LTEXT           "纬度:",IDC_STATIC,125,82,17,8
+    LTEXT           "(度)",IDC_STATIC,92,82,14,8
+    LTEXT           "(度)",IDC_STATIC,203,82,14,8
+    LTEXT           "速度:",IDC_STATIC,13,105,17,8
+    LTEXT           "(节)",IDC_STATIC,92,105,14,8
+    LTEXT           "航向:",IDC_STATIC,125,105,17,8
+    LTEXT           "(度)",IDC_STATIC,203,105,14,8
+    EDITTEXT        IDC_EDIT_LON2,32,79,57,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LAT2,142,79,57,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COURSE2,142,103,57,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SPEED2,32,103,57,14,ES_AUTOHSCROLL
+    GROUPBOX        "结果",IDC_STATIC,7,128,218,49
+    LTEXT           "TCPA:",IDC_STATIC,14,141,20,8
+    LTEXT           "DCPA:",IDC_STATIC,14,158,20,8
+    LTEXT           "(秒)",IDC_STATIC,127,142,14,8
+    LTEXT           "(海里)",IDC_STATIC,127,159,20,8
+    EDITTEXT        IDC_EDIT_TCPA,38,138,80,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DCPA,39,156,80,14,ES_AUTOHSCROLL
+END
+
+IDD_GET_AREA_OF_GEO_REGION_DLG DIALOGEX 0, 0, 238, 155
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "多边形面积计算"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,184,134,42,14
+    GROUPBOX        "定点坐标",IDC_STATIC,7,7,224,102
+    LTEXT           "顶点1:",IDC_STATIC,10,24,21,8
+    EDITTEXT        IDC_EDIT1,56,21,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,158,21,55,14,ES_AUTOHSCROLL
+    LTEXT           "经度:",IDC_STATIC,39,24,17,8
+    LTEXT           "(度)",IDC_STATIC,113,24,14,8
+    LTEXT           "(度)",IDC_STATIC,214,24,14,8
+    LTEXT           "纬度:",IDC_STATIC,140,24,17,8
+    LTEXT           "顶点2:",IDC_STATIC,10,46,21,8
+    EDITTEXT        IDC_EDIT3,56,43,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,158,43,55,14,ES_AUTOHSCROLL
+    LTEXT           "经度:",IDC_STATIC,39,46,17,8
+    LTEXT           "(度)",IDC_STATIC,113,46,14,8
+    LTEXT           "(度)",IDC_STATIC,214,46,14,8
+    LTEXT           "纬度:",IDC_STATIC,140,46,17,8
+    LTEXT           "顶点3:",IDC_STATIC,10,64,21,8
+    EDITTEXT        IDC_EDIT5,56,61,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,158,61,55,14,ES_AUTOHSCROLL
+    LTEXT           "经度:",IDC_STATIC,39,64,17,8
+    LTEXT           "(度)",IDC_STATIC,113,64,14,8
+    LTEXT           "(度)",IDC_STATIC,214,64,14,8
+    LTEXT           "纬度:",IDC_STATIC,140,64,17,8
+    LTEXT           "顶点4:",IDC_STATIC,10,86,21,8
+    EDITTEXT        IDC_EDIT7,56,83,55,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,158,83,55,14,ES_AUTOHSCROLL
+    LTEXT           "经度:",IDC_STATIC,39,86,17,8
+    LTEXT           "(度)",IDC_STATIC,113,86,14,8
+    LTEXT           "(度)",IDC_STATIC,214,86,14,8
+    LTEXT           "纬度:",IDC_STATIC,140,86,17,8
+    LTEXT           "面积:",IDC_STATIC,38,119,17,8
+    LTEXT           "(平方公里)",IDC_STATIC,113,119,40,8
+    EDITTEXT        IDC_EDIT9,57,116,54,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "计算面积",IDC_BUTTON3,184,116,40,14
+END
+
+IDD_GET_DEP_INFO_DLG DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "获取等深线"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,263,179,50,14
+    PUSHBUTTON      "获取数据",IDC_BUTTON1,159,21,41,14
+    GROUPBOX        "等深线数据",IDC_STATIC,7,40,306,60
+    GROUPBOX        "海岸线数据",IDC_STATIC,7,107,306,71
+    EDITTEXT        IDC_EDIT1,7,51,306,45,ES_MULTILINE
+    EDITTEXT        IDC_EDIT2,7,119,306,53,ES_MULTILINE
+    EDITTEXT        IDC_EDIT_MEM_POS,95,22,40,14,ES_AUTOHSCROLL
+    LTEXT           "当前内存中的海图数量:",IDC_STATIC,18,7,72,8
+    EDITTEXT        IDC_EDIT3,95,3,40,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "读取数据的内存图幅PosID:",IDC_STATIC,7,24,83,8
+    LTEXT           "读取的图幅名称:",IDC_STATIC,155,7,51,8
+    EDITTEXT        IDC_EDIT4,207,3,93,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_SAVE_MAP_VIEW_TO_IMG_DLG DIALOGEX 0, 0, 241, 94
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "截屏"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "截屏",IDOK,51,59,50,14
+    PUSHBUTTON      "取消",IDCANCEL,137,59,50,14
+    CONTROL         "png格式",IDC_RADIO_PNG,"Button",BS_AUTORADIOBUTTON,14,26,42,10
+    CONTROL         "jpg格式",IDC_RADIO_JPG,"Button",BS_AUTORADIOBUTTON,73,26,39,10
+    CONTROL         "bmp格式",IDC_RADIO_BMP,"Button",BS_AUTORADIOBUTTON,129,26,43,10
+    LTEXT           "图片格式：",IDC_STATIC,7,7,42,8
+    CONTROL         "gif格式",IDC_RADIO_GIF,"Button",BS_AUTORADIOBUTTON,189,26,43,10
+END
+
+IDD_ADD_TEST_SHIP_DLG DIALOGEX 0, 0, 186, 137
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加测试船舶数量"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "添加",IDOK,60,114,32,15
+    PUSHBUTTON      "取消",IDCANCEL,113,115,33,14
+    LTEXT           "当前船舶数量：",IDC_STATIC,31,16,49,8
+    EDITTEXT        IDC_EDIT_CUR_SHIP_COUNT,81,14,94,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "继续添加数量：",IDC_STATIC,31,39,49,8
+    EDITTEXT        IDC_EDIT_ADD_SHIP_COUNT,81,36,93,14,ES_AUTOHSCROLL
+    LTEXT           "每条轨迹的点数：",IDC_STATIC,24,60,56,8
+    LTEXT           "显示轨迹点数据：",IDC_STATIC,24,82,56,8
+    EDITTEXT        IDC_EDIT1,81,58,93,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,81,82,93,14,ES_AUTOHSCROLL
+END
+
+IDD_TEST_AREA_WARN_DLG DIALOGEX 0, 0, 225, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "演示区域报警"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,166,178,50,14
+    PUSHBUTTON      "添加测试数据",IDC_BUTTON_ADD_TEST_DATA,7,7,50,14
+    PUSHBUTTON      "检测区域报警情况",IDC_BUTTON_CHECK_WARN,135,34,72,14
+    EDITTEXT        IDC_EDIT_MSG,11,51,207,62,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL
+    PUSHBUTTON      "检测靠近报警",IDC_CHECK_NEAR,164,117,50,14
+    LTEXT           "检测距离(米)：",IDC_STATIC,15,120,48,8
+    EDITTEXT        IDC_EDIT1,66,117,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,14,137,192,34,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL
+END
+
+IDD_TEST_LAYER_OBJECT_DLG DIALOGEX 0, 0, 137, 116
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "演示图层物标功能"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,21,75,42,14
+    PUSHBUTTON      "取消",IDCANCEL,71,75,50,14
+    PUSHBUTTON      "添加10个测试图层",IDC_BUTTON_ADD_LAYERS,25,19,91,14
+    PUSHBUTTON      "每个图层添加1000个物标",IDC_BUTTON_ADD_OBJ,25,45,91,14
+END
+
+IDD_TEST_NINE_NINE_BOX_DLG DIALOGEX 0, 0, 195, 142
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "九九方格演示"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "九九方格显示:",IDC_STATIC,15,39,46,8
+    CONTROL         "",IDC_CHECK_SHOW_OR_NOT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,68,39,16,10
+    GROUPBOX        "设置",IDC_STATIC,7,8,181,65
+    LTEXT           "九九方格中心:",IDC_STATIC,15,23,44,8
+    PUSHBUTTON      "设置",IDC_BUTTON_SET,128,43,50,14
+    LTEXT           "(度)",IDC_STATIC,106,23,14,8
+    LTEXT           "(度)",IDC_STATIC,171,23,14,8
+    EDITTEXT        IDC_EDIT3,65,21,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,130,21,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "计算",IDC_STATIC,8,79,180,56
+    LTEXT           "计算坐标:",IDC_STATIC,30,85,31,8
+    LTEXT           "(度)",IDC_STATIC,108,84,14,8
+    LTEXT           "(度)",IDC_STATIC,173,84,14,8
+    EDITTEXT        IDC_EDIT5,65,82,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,132,82,40,14,ES_AUTOHSCROLL
+    LTEXT           "九九方格编号:",IDC_STATIC,17,105,44,8
+    EDITTEXT        IDC_EDIT7,65,103,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "计算",IDC_BUTTON_GET,129,105,50,14
+    CONTROL         "",IDC_CHK_SHOW_TEXT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,68,54,16,10
+    LTEXT           "方格文字显示:",IDC_STATIC,15,54,46,8
+END
+
+IDD_TEST_CACULATE_SCALE_DLG DIALOGEX 0, 0, 181, 192
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "量程比例尺切换演示"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,40,171,50,14
+    PUSHBUTTON      "取消",IDCANCEL,110,171,50,14
+    GROUPBOX        "量程-->比例尺（雷达校准）",IDC_STATIC,7,7,163,83
+    PUSHBUTTON      "计算",IDC_BUTTON1,138,19,26,14
+    GROUPBOX        "比例尺-->量程",IDC_STATIC,7,93,163,69
+    LTEXT           "屏幕距离(像素):",IDC_STATIC,22,127,50,8
+    EDITTEXT        IDC_EDIT4,78,125,40,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT6,78,144,40,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "当前比例尺:",IDC_STATIC,34,106,38,8
+    EDITTEXT        IDC_EDIT7,78,103,40,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "计算",IDC_BUTTON4,138,100,26,14
+    LTEXT           "平面距离(海里):",IDC_STATIC,22,147,50,8
+    LTEXT           "屏幕距离(像素):",IDC_STATIC,22,22,50,8
+    EDITTEXT        IDC_EDIT9,78,20,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,78,39,40,14,ES_AUTOHSCROLL
+    LTEXT           "平面距离(海里):",IDC_STATIC,22,42,50,8
+    LTEXT           "比例尺:",IDC_STATIC,48,64,24,8
+    EDITTEXT        IDC_EDIT11,78,61,40,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "切换",IDC_BUTTON3,138,38,27,14
+END
+
+IDD_SEL_OWN_SHIP_HISTORY_TRACK_DLG DIALOGEX 0, 0, 251, 142
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查询历史轨迹"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "查询条件",IDC_STATIC,7,7,232,56
+    LTEXT           "起始时间：",IDC_STATIC,31,21,35,8
+    LTEXT           "结束时间：",IDC_STATIC,31,40,35,8
+    CONTROL         "",IDC_DATETIMEPICKER_START_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,64,19,58,15
+    CONTROL         "",IDC_DATETIMEPICKER_START_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,126,19,58,15
+    CONTROL         "",IDC_DATETIMEPICKER_END_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,64,37,58,15
+    CONTROL         "",IDC_DATETIMEPICKER_END_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,126,37,58,15
+    PUSHBUTTON      "查询",IDC_BUTTON_SEL,194,22,36,14
+    GROUPBOX        "查询结果",IDC_STATIC,7,71,233,64
+    PUSHBUTTON      "海图绘制轨迹",IDC_BUTTON_DRAW_IN_MAP,183,118,53,14
+    LTEXT           "静态",IDC_STATIC_MSG,10,89,229,19
+END
+
+IDD_TEST_SHIP_NEAR_OBJ_WARNING_DLG DIALOG 0, 0, 320, 200
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "对话框"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,209,179,50,14
+    PUSHBUTTON      "取消",IDCANCEL,263,179,50,14
+END
+
+IDD_USER_OBJ_POSITION_OPRATOR DIALOGEX 0, 0, 240, 142
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "自定义物标坐标操作"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_OBJ_POSITION,7,7,226,99,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "修改",IDC_BTN_MODIFY_POSITON,7,115,50,14
+    PUSHBUTTON      "删除",IDC_BTN_DEL_POSITION,65,115,50,14
+    PUSHBUTTON      "添加",IDC_BTN_APPEND_POSITON,181,115,50,14
+    PUSHBUTTON      "插入",IDC_BTN_ADD_POSITON,123,115,50,14
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,205,162,50,14
+    PUSHBUTTON      "取消",IDCANCEL,259,162,50,14
+END
+
+IDD_POSITION_SETTING_DLG DIALOGEX 0, 0, 205, 94
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,35,72,50,14
+    PUSHBUTTON      "取消",IDCANCEL,103,72,50,14
+    EDITTEXT        IDC_EDT_LonD,36,18,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LonF,91,18,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IIDC_EDT_LonM,148,18,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LatD,36,47,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LatF,91,47,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_LatM,148,47,40,14,ES_AUTOHSCROLL
+    LTEXT           "经度：",IDC_STATIC,7,21,25,8
+    LTEXT           "纬度：",IDC_STATIC,7,50,25,8
+    LTEXT           "°",IDC_STATIC,80,19,8,8
+    LTEXT           "′",IDC_STATIC,136,19,8,8
+    LTEXT           "″",IDC_STATIC,191,19,8,8
+    LTEXT           "°",IDC_STATIC,80,47,8,8
+    LTEXT           "′",IDC_STATIC,136,47,8,8
+    LTEXT           "″",IDC_STATIC,191,47,8,8
+END
+
+IDD_VCF_LAYER_MAN DIALOGEX 0, 0, 182, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "VCF图层管理"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_LAYER,7,7,168,159,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "全部显示",IDC_BTN_SHOW_ALL_VCF_LY,20,171,50,14
+    PUSHBUTTON      "全部不显示",IDC_BTN_HIDDEN_ALL_VCF_LY,91,171,50,14
+END
+
+IDD_NEW_MAP_DLG DIALOGEX 0, 0, 475, 277
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "NewMap"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_NEW_MAP_CTRL,
+                    "{18468C02-CE97-4311-B4ED-9776C8AA5FA1}",NOT WS_VISIBLE | WS_TABSTOP,75,36,164,86
+    PUSHBUTTON      "海图旋转",IDC_BUTTON_MAP_ROTATE,7,7,50,14
+    PUSHBUTTON      "设置陆地颜色",IDC_BUTTON_SET_LAND_COLOR,71,7,50,14
+END
+
+IDD_GLOBAL_VIEW_DLG DIALOGEX 0, 0, 228, 139
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+EXSTYLE WS_EX_STATICEDGE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_GLOGAL_VIEW_CTRL,
+                    "{18468C02-CE97-4311-B4ED-9776C8AA5FA1}",NOT WS_VISIBLE,44,40,24,14
+END
+
+IDD_WATER_COLOR_SETTING_DLG DIALOGEX 0, 0, 273, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "水深颜色设定"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "浅水区颜色",IDC_STATIC,7,7,258,41
+    PUSHBUTTON      "...",IDC_BUTTON_COLOR_VS,230,24,25,14
+    GROUPBOX        "安全区颜色",IDC_STATIC,7,51,258,74
+    PUSHBUTTON      "...",IDC_BUTTON_COLOR_MS,230,72,25,14
+    PUSHBUTTON      "...",IDC_BUTTON_COLOR_MD,230,98,25,14
+    LTEXT           "浅水线以外 ",IDC_STATIC,25,26,43,8
+    LTEXT           "浅水线~安全线 ",IDC_STATIC,22,75,56,8
+    LTEXT           "安全线~深水线 ",IDC_STATIC,22,101,56,8
+    GROUPBOX        "深水区颜色",IDC_STATIC,7,129,258,41
+    LTEXT           "深水线以外 ",IDC_STATIC,22,151,43,8
+    PUSHBUTTON      "...",IDC_BUTTON_COLOR_DW,230,149,25,14
+    EDITTEXT        IDC_EDIT_MSR,125,72,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "RGB:",IDC_STATIC,101,75,17,8
+    EDITTEXT        IDC_EDIT_MSG,160,72,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_MSB,195,72,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "应用",IDC_BUTTON_APPLY,187,180,50,14
+    EDITTEXT        IDC_EDIT_MDR,125,98,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "RGB:",IDC_STATIC,101,100,17,8
+    EDITTEXT        IDC_EDIT_MDG,160,98,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_MDB,195,98,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_DWR,125,149,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "RGB:",IDC_STATIC,101,152,17,8
+    EDITTEXT        IDC_EDIT_DWG,160,149,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_DWB,195,149,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_VSR,125,24,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "RGB:",IDC_STATIC,101,27,17,8
+    EDITTEXT        IDC_EDIT_VSG,160,24,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_VSB,195,24,28,14,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_SET_ATTEN_TIMES_DLG DIALOGEX 0, 0, 182, 61
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置衰减帧数"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,78,40,50,14
+    EDITTEXT        IDC_EDIT_TIMES,67,11,98,14,ES_AUTOHSCROLL
+    LTEXT           "衰减帧数：",IDC_STATIC,7,14,54,8
+END
+
+IDD_SetRadarDlg DIALOGEX 0, 0, 344, 151
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "雷达参数设置"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,277,130,50,14
+    LTEXT           "雷达量程(单位: 米):",IDC_STATIC,17,45,62,8
+    EDITTEXT        IDC_Radar_Range,87,43,40,14,ES_AUTOHSCROLL
+    LTEXT           "雷达高度(单位: 米):",IDC_STATIC,17,26,62,8
+    EDITTEXT        IDC_Radar_Height,87,23,40,14,ES_AUTOHSCROLL
+    LTEXT           "水平面高度(单位: 米):",IDC_STATIC,11,64,68,8
+    EDITTEXT        IDC_Water_level,87,62,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Select_ODUList,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,150,24,176,99
+    LTEXT           "已登录的ODU设备：",IDC_STATIC,150,12,69,8
+END
+
+IDD_ModifyRadarDlg DIALOGEX 0, 0, 176, 94
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "雷达参数修改"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,119,73,50,14
+    LTEXT           "雷达量程(单位: 米):",IDC_STATIC,17,35,62,8
+    EDITTEXT        IDC_MDRadar_Range,87,33,40,14,ES_AUTOHSCROLL
+    LTEXT           "雷达高度(单位: 米):",IDC_STATIC,17,17,62,8
+    EDITTEXT        IDC_MDRadar_Height,87,14,40,14,ES_AUTOHSCROLL
+    LTEXT           "水面平高度(单位: 米):",IDC_STATIC,11,54,68,8
+    EDITTEXT        IDC_MDWater_level,87,52,40,14,ES_AUTOHSCROLL
+END
+
+IDD_RadarPropertyDlg DIALOGEX 0, 0, 179, 135
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "雷达属性"
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "雷达量程(单位: 米):",IDC_STATIC,17,88,62,8
+    LTEXT           "雷达高度(单位: 米):",IDC_STATIC,17,69,62,8
+    LTEXT           "水面平高度(单位: 米):",IDC_STATIC,11,106,68,8
+    LTEXT           "雷达编号:",IDC_STATIC,18,12,31,8
+    EDITTEXT        IDC_PTRadar_ID,87,10,58,14,ES_AUTOHSCROLL
+    LTEXT           "经度(单位：度):",IDC_STATIC,17,31,50,8
+    LTEXT           "纬度(单位：度):",IDC_STATIC,17,50,50,8
+    EDITTEXT        IDC_PTRadar_Lon,87,29,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PTRADAR_Lan,87,48,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PTRadar_Range,87,85,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PTRadar_Height,87,67,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PTWater_level,87,104,58,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "FileDescription", "YimaEncViewer Microsoft 基础类应用程序"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "YimaEncViewer"
+            VALUE "LegalCopyright", "版权所有 (C) 2006"
+            VALUE "OriginalFilename", "YimaEncViewer.EXE"
+            VALUE "ProductName", "YimaEncViewer 应用程序"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 336
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_GEO_OBJECT_INFO_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 352
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 275
+    END
+
+    IDD_SEL_OBJECTS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_SET_SCALE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+    END
+
+    IDD_SAFE_CONTOUR_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_MAP_LIB_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 386
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_LAYER_MAN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_CENTER_ROTATE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_NAVIGATION_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 444
+    END
+
+    IDD_ROUTE_EDIT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_ALARM_SETTING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_EMULATE_PARAM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_USER_LAYER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 300
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_QUERY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 329
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 161
+    END
+
+    IDD_LIB_STYLES_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 552
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 307
+        HORZGUIDE, 58
+    END
+
+    IDD_POINT_STYLES_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 541
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 271
+    END
+
+    IDD_FACE_STYLES_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 555
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 299
+    END
+
+    IDD_GEO_CALC_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 222
+    END
+
+    IDD_USER_DEFINE_MAPLAYER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_MAPLAYER_SHOW_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_PRINT_TITLE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_S63_FILE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_SET_DEVICE_ID_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 41
+    END
+
+    IDD_HIGHLIGHT_DEPTHAREA_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 251
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_CHG_DPTH_LN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 258
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    IDD_SET_GRID_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 347
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_SCRN_PLANE_GEO_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 253
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_GET_DCPA_TCPA_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_GET_AREA_OF_GEO_REGION_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_GET_DEP_INFO_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_SAVE_MAP_VIEW_TO_IMG_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_ADD_TEST_SHIP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_TEST_AREA_WARN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_TEST_LAYER_OBJECT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_TEST_NINE_NINE_BOX_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_TEST_CACULATE_SCALE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_SEL_OWN_SHIP_HISTORY_TRACK_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_TEST_SHIP_NEAR_OBJ_WARNING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_USER_OBJ_POSITION_OPRATOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_POSITION_SETTING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_VCF_LAYER_MAN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_NEW_MAP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 468
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 270
+    END
+
+    IDD_GLOBAL_VIEW_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 223
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_WATER_COLOR_SETTING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_SET_ATTEN_TIMES_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_SetRadarDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 337
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 144
+    END
+
+    IDD_ModifyRadarDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 169
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_RadarPropertyDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 128
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_GEO_OBJECT_INFO_DLG DLGINIT
+BEGIN
+    IDC_MSFLEXGRID, 0x37a, 336, 0
+0x0024, 0x0000, 0x0037, 0x0032, 0x0045, 0x0036, 0x0037, 0x0031, 0x0032, 
+0x0030, 0x002d, 0x0035, 0x0039, 0x0035, 0x0039, 0x002d, 0x0031, 0x0031, 
+0x0063, 0x0066, 0x002d, 0x0039, 0x0031, 0x0046, 0x0036, 0x002d, 0x0043, 
+0x0032, 0x0038, 0x0036, 0x0033, 0x0043, 0x0033, 0x0038, 0x0035, 0x0045, 
+0x0033, 0x0030, 0x0029, 0x0000, 0x0001, 0x0000, 0x0021, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x0001, 0x8001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0002, 0x8001, 0x0001, 0x0000, 0x2100, 0x3443, 0x0812, 0x0000, 0x0700, 
+0x002c, 0xef00, 0x0022, 0x4200, 0x6f6f, 0x0050, 0x0600, 0x8000, 0x0000, 
+0x0200, 0x0000, 0x0200, 0x0000, 0x0100, 0x0000, 0x0100, 0x0000, 0x0000, 
+0x0000, 0x0500, 0x0000, 0x0880, 0x0000, 0x0f80, 0x0000, 0x1280, 0x0000, 
+0x0d80, 0x0000, 0x0e80, 0x0000, 0x8080, 0x8080, 0xc000, 0xc0c0, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0100, 0x0000, 0x0100, 0x0000, 0x0000, 0x0000, 
+0x0100, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0100, 0x0000, 
+0x0100, 0x0200, 0x0300, 0x0000, 0x0000, 0x0300, 0x0000, 0x0100, 0x0100, 
+0x0000, 0x0100, 0x0400, 0x0000, 0x0000, 0x0000, 0x0300, 0xe352, 0x910b, 
+0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x0151, 0x0000, 0x9000, 0x4401, 
+0x0142, 0x1400, 0x694d, 0x7263, 0x736f, 0x666f, 0x2074, 0x6153, 0x736e, 
+0x5320, 0x7265, 0x6669, 0x5204, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 
+0x4b00, 0x51b8, 0x746c, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+IDD_ROUTE_EDIT_DLG DLGINIT
+BEGIN
+    IDC_ROUTE_WP_GRID, 0x37a, 313, 0
+0x0024, 0x0000, 0x0037, 0x0032, 0x0045, 0x0036, 0x0037, 0x0031, 0x0032, 
+0x0030, 0x002d, 0x0035, 0x0039, 0x0035, 0x0039, 0x002d, 0x0031, 0x0031, 
+0x0063, 0x0066, 0x002d, 0x0039, 0x0031, 0x0046, 0x0036, 0x002d, 0x0043, 
+0x0032, 0x0038, 0x0036, 0x0033, 0x0043, 0x0033, 0x0038, 0x0035, 0x0045, 
+0x0033, 0x0030, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x1b98, 0x0000, 0x1a5b, 
+0x0000, 0x6f42, 0x506f, 0x0000, 0x0006, 0x0080, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0005, 
+0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 0x000d, 0x8000, 
+0x000e, 0x8000, 0x8080, 0x0080, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 
+0x0003, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 
+0x0004, 0x0000, 0x0000, 0x0000, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 
+0xaa00, 0x4b00, 0x51b8, 0x0001, 0x0000, 0x0190, 0x4244, 0x0001, 0x4d14, 
+0x6369, 0x6f72, 0x6f73, 0x7466, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 
+0x0466, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 
+0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_USER_LAYER_DLG DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 3, 0
+0xe3b5, "\000" 
+    IDC_COMBO1, 0x403, 3, 0
+0xdfcf, "\000" 
+    IDC_COMBO1, 0x403, 3, 0
+0xe6c3, "\000" 
+    IDC_COMBO1, 0x403, 7, 0
+0xe0b6, 0xe0c0, 0xcdd0, "\000" 
+    0
+END
+
+IDD_ABOUTBOX DLGINIT
+BEGIN
+    IDC_YIMA_CTRL, 0x376, 74, 0
+0x001b, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0032, 0x0030, 
+0x0030, 0x0036, 0x0020, 0x0073, 0x0068, 0x0061, 0x006e, 0x0067, 0x0068, 
+0x0061, 0x0069, 0x0000, 0x0001, 0x29c1, 0x0000, 0x12cf, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+IDD_NEW_MAP_DLG DLGINIT
+BEGIN
+    IDC_NEW_MAP_CTRL, 0x376, 74, 0
+0x001b, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0032, 0x0030, 
+0x0030, 0x0036, 0x0020, 0x0073, 0x0068, 0x0061, 0x006e, 0x0067, 0x0068, 
+0x0061, 0x0069, 0x0000, 0x0001, 0x196d, 0x0000, 0x0e78, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+IDD_GLOBAL_VIEW_DLG DLGINIT
+BEGIN
+    IDC_GLOGAL_VIEW_CTRL, 0x376, 74, 0
+0x001b, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0032, 0x0030, 
+0x0030, 0x0036, 0x0020, 0x0073, 0x0068, 0x0061, 0x006e, 0x0067, 0x0068, 
+0x0061, 0x0069, 0x0000, 0x0001, 0x0379, 0x0000, 0x0251, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+IDR_HTML_SETATTENTIMES  HTML                    "SetAttenTimes.htm"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_SetRadarDlg AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_ModifyRadarDlg AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_RadarPropertyDlg AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_NAVIGATION_DLG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ARROW_RADAR         CURSOR                  "res\\cursor1.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "YimaEncViewer\n\nYimaEncViewer\n\n\nYimaEncViewer.Document\nYimaEncViewer.Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "YIMAENC 模拟航行监控"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_OPEN            "打开现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "用新名称保存活动文档\n另存为"
+    ID_FILE_PAGE_SETUP      "更改打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "更改打印机选项和打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "打开此文档"
+    ID_FILE_MRU_FILE2       "打开此文档"
+    ID_FILE_MRU_FILE3       "打开此文档"
+    ID_FILE_MRU_FILE4       "打开此文档"
+    ID_FILE_MRU_FILE5       "打开此文档"
+    ID_FILE_MRU_FILE6       "打开此文档"
+    ID_FILE_MRU_FILE7       "打开此文档"
+    ID_FILE_MRU_FILE8       "打开此文档"
+    ID_FILE_MRU_FILE9       "打开此文档"
+    ID_FILE_MRU_FILE10      "打开此文档"
+    ID_FILE_MRU_FILE11      "打开此文档"
+    ID_FILE_MRU_FILE12      "打开此文档"
+    ID_FILE_MRU_FILE13      "打开此文档"
+    ID_FILE_MRU_FILE14      "打开此文档"
+    ID_FILE_MRU_FILE15      "打开此文档"
+    ID_FILE_MRU_FILE16      "打开此文档"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
+END
+
+STRINGTABLE
+BEGIN
+    ID_ZOOM_IN              "放大\n放大"
+    ID_ZOOM_OUT             "缩小\n缩小"
+    ID_MOVE_DOWN            "下移\n下移"
+    ID_MOVE_UP              "上移\n上移"
+    ID_MOVE_RIGHT           "右移\n右移"
+END
+
+STRINGTABLE
+BEGIN
+    ID_GENERAL_QUERY        "模糊查询\n模糊查询"
+    ID_AREA_ZOOM_IN         "选择区域放大\n选择区域放大"
+END
+
+STRINGTABLE
+BEGIN
+    ID_OVERVIEW             "全览\n全览"
+    ID_OPEN_MAP_MAN         "图幅管理\n图幅管理"
+    ID_SET_SCALE            "指定比例尺\n指定比例尺"
+END
+
+STRINGTABLE
+BEGIN
+    ID_MOVE_LEFT            "左移\n左移"
+END
+
+STRINGTABLE
+BEGIN
+    ID_ADD_RADAR            "添加雷达"
+    ID_ADD_TARGET_SHIP      "添加船舶"
+END
+
+STRINGTABLE
+BEGIN
+    ID_ADD_ROUTE            "添加航线"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\YimaEncViewer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
