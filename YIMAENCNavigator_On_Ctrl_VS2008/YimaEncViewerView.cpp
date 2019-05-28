@@ -148,6 +148,7 @@ ON_EVENT(CYimaEncViewerView, ID_YIMAENC_CTRL, 2, OnDrawRadar, VTS_NONE)
 ON_EVENT(CYimaEncViewerView, ID_YIMAENC_CTRL, 3, OnAfterDrawMarineMapYimaEncCtrl, VTS_NONE) 
 END_EVENTSINK_MAP()
 
+//
 /////////////////////////////////////////////////////////////////////////////
 // CYimaEncViewerView construction/destruction
 
