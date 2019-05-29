@@ -5,9 +5,11 @@
 #include "YimaEncViewer.h"
 #include "ModifyRadarDlg.h"
 #include "afxdialogex.h"
+#include "AisIPConfig.h"
 
 extern Radar curSelectRadar;
 extern list<Radar> radarList;
+AisIPConfig ipCon_Mod(L"AisIPconfig.txt");
 // ModifyRadarDlg 对话框
 
 IMPLEMENT_DYNAMIC(ModifyRadarDlg, CDialog)
@@ -64,6 +66,6 @@ void ModifyRadarDlg::OnBnClickedOk()
 	mdLanStr.Format(_T("%lf"), curSelectRadar.Lan*1.0 / UNI_GEO_COOR_MULTI_FACTOR);
 	radarModifyMsg = radarModifyMsg + ";ER;" + curSelectRadar.Id + ";;;" + mdLonStr.GetBuffer() + ";" + mdLanStr.GetBuffer() + ";" + mdHeightStr.GetBuffer() + ";" + mdRangeStr.GetBuffer() + ";" + mdLevelStr.GetBuffer() + "#";
 	//发送Radar修改信息
-	sendRadarData(radarModifyMsg, "127.0.0.1", RADAR_PORT);
+	sendRadarData(radarModifyMsg, ipCon_Mod.IP_Radar.GetBuffer(), ipCon_Mod.Port_Add_Radar);
 	CDialog::OnOK();
 }

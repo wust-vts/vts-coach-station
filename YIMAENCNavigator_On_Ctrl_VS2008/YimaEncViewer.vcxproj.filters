@@ -204,6 +204,9 @@
     <ClCompile Include="AisType5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AisIPConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="YimaEncViewer.rc">
@@ -401,6 +404,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AisType5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AisIPConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

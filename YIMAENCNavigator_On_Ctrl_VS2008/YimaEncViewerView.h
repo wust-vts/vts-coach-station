@@ -25,25 +25,26 @@
 #include "AIS.h"
 #include "AisType1.h"
 #include "AisType5.h"
+#include "AisIPConfig.h"
 
 typedef enum CURRENT_SUB_OPERATION
 {
-	NO_OPERATION = 0, 
+	NO_OPERATION = 0,
 	ADD_ISO_POINT = 1,
 	ADD_LINE = 0x2,
-	ADD_FACE = 0x4, 
+	ADD_FACE = 0x4,
 	ADD_COLOR_ATTENUATION_OBJ = 0x8, //添加颜色衰减的物标   
 	AREA_ZOOM_IN = 0x10,
-	ADD_WAYPOINT = 0x20,  
+	ADD_WAYPOINT = 0x20,
 	ADD_ROUTE = 0x40,
-	EDITING_ROUTE = 0x80, 
-	EDITING_WAY_POINT = 0x100, 
-	HAND_ROAM = 0x200,  
+	EDITING_ROUTE = 0x80,
+	EDITING_WAY_POINT = 0x100,
+	HAND_ROAM = 0x200,
 	SHOWING_HINT_TEXT = 0x400,
 	EDITING_BASIC_OBJECT = 0x800,
 	EDITING_EDGE_MID_PO = 0x1000,
 	DRAG_EDITING_OBJECT = 0x2000,
-	EDITING_GEO_OBJECT = 0x4000, 
+	EDITING_GEO_OBJECT = 0x4000,
 	DRAW_EBL = 0x8000,
 	ADD_USER_LAYER_OBJ = 0x10000,
 	AREA_SELECT = 0x20000,
@@ -62,7 +63,7 @@ typedef enum CURRENT_SUB_OPERATION
 
 #define MAX_LINE_EDIT_POINT_COUNT 100000
 class CYimaEncViewerView : public CView
-{ 
+{
 protected: // create from serialization only
 	CYimaEncViewerView();
 	DECLARE_DYNCREATE(CYimaEncViewerView)
@@ -71,11 +72,11 @@ protected: // create from serialization only
 	CWinThread* pDrawMapThread;
 
 	int m_nTimerStep; //定时器，单位为毫秒
-	bool m_bShowRefreashTime; 
+	bool m_bShowRefreashTime;
 	int m_startFillTrans;
-// Attributes
+	// Attributes
 public:
-	CYimaEncViewerDoc* GetDocument(); 
+	CYimaEncViewerDoc* GetDocument();
 
 	//CYimaEnc m_yimaEncCtrl; 
 
@@ -85,7 +86,7 @@ public:
 
 	MRECT m_rectHintText; //动态提示框: 此变量为提示框区域
 	int m_iMouseStoppedTimerCount; //动态提示框: 此变量记录鼠标停止不动多长时间了,单位是定时器的计数次数
- 
+
 	M_POINT m_mouseDragFirstPo;     //鼠标拖曳操作的起点
 	M_POINT m_mouseMoveCurrentPo;   //鼠标当前的位置
 	M_POINT m_mouseMoveLastPo;		//鼠标拖曳操作的上一个点位置
@@ -98,14 +99,14 @@ public:
 
 	int m_curSelectedObjCount; //YIMAENC COMMENT: 当前选中的物标个数
 	MEM_GEO_OBJ_POS m_curSelectedObjPoses[SEL_OBJ_MAX_COUNT];//YIMAENC COMMENT: 当前选中的所有物标位置
- 
+
 	float m_highlightDepthLowerLimit, m_highlightDepthUpLimit; //高亮水深区的深度范围
 	long m_highlightDepthAreaColor; //高亮水深区的颜色
- 
+
 	int m_iEditingPointPosOnEditingLine; //正在编辑某一个线对象的某一节点
-  
+
 	M_GEO_OBJ_POS m_editingUserMapObjPos; //当前被选中的自定义海图的对象索引，如果其 layerPos 为-1，说明没有物标被选中 
-	 
+
 	bool m_bOnRouteEditMode; //当前是否出于航线编辑模式
 	long m_nEditingWayPointID;
 	long m_nEditingRouteID;
@@ -143,6 +144,7 @@ public:
 	HANDLE sendAisEvent;	//发送AIS数据事件对象
 	HANDLE m_hSendAISThread;	//发送AIS数据线程
 	CAIS m_aisSend;
+	AisIPConfig* ipCon;		//读取RADAR和ODU配置文件
 public:
 	std::vector<std::string> split(const std::string& src, const std::string& key);		//字符串分割
  // Operations
@@ -150,14 +152,14 @@ public:
 	__int64 GetCurTimeMillis();
 	void DrawScaledMap();
 	void CheckIfWheelStop();
-	long SelectAWayPointByScrnPoint(int scrnPointX, int scrnPointY); 	
+	long SelectAWayPointByScrnPoint(int scrnPointX, int scrnPointY);
 	long SelectARouteByScrnPoint(int scrnPointX, int scrnPointY);
 
 	bool IsOnOperation(CURRENT_SUB_OPERATION subOperation);
 
 	void SetOperation(CURRENT_SUB_OPERATION subOperation);
 
-	void CancelOperation(CURRENT_SUB_OPERATION subOperation); 
+	void CancelOperation(CURRENT_SUB_OPERATION subOperation);
 
 	bool IsOnDragingObjectOperation();
 
@@ -171,13 +173,13 @@ public:
 
 	void RefreshScaleStatusBar();
 	M_POINT GetCurMouseOffSetObjCenter(M_GEO_OBJ_POS ObjPos, M_POINT curMouseScrnPo);
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CYimaEncViewerView)
-    public:
+	// Overrides
+		// ClassWizard generated virtual function overrides
+		//{{AFX_VIRTUAL(CYimaEncViewerView)
+public:
 	virtual void OnDraw(CDC* pDC);  // overridden to draw this view
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
-	protected:
+protected:
 	virtual BOOL OnPreparePrinting(CPrintInfo* pInfo);
 	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
@@ -187,7 +189,7 @@ public:
 // Implementation
 public:
 	bool UserObject_SetAttributes(int layerPos, int innerLayerPos);
- 
+
 	virtual ~CYimaEncViewerView();
 #ifdef _DEBUG
 	virtual void AssertValid() const;
@@ -197,19 +199,19 @@ public:
 protected:
 
 	int DetectRouteLegSafteyInMemMap(int memMapPos, M_POINT legStartGeoPo, M_POINT legEndGeoPo,
-								M_GEO_OBJ_POS* retCrossObjPoses);
+		M_GEO_OBJ_POS* retCrossObjPoses);
 
-	void ResizeMapScrn(bool bUseDragBufferScrnMode, float bufferScrnSizeRatio) ;
+	void ResizeMapScrn(bool bUseDragBufferScrnMode, float bufferScrnSizeRatio);
 
-// Generated message map functions
-protected: 
+	// Generated message map functions
+protected:
 
 	int m_nEditingLinePointCount;
-	M_POINT m_editingLineGeoPoints[MAX_LINE_EDIT_POINT_COUNT]; 
-	void DrawCurrentEblLine(HDC hdc, M_POINT startPoint, M_POINT endPoint, 
-		   M_POINT* pRetEblEndPoint = NULL);
+	M_POINT m_editingLineGeoPoints[MAX_LINE_EDIT_POINT_COUNT];
+	void DrawCurrentEblLine(HDC hdc, M_POINT startPoint, M_POINT endPoint,
+		M_POINT* pRetEblEndPoint = NULL);
 	void DrawEditingLineBeforeFinish();
-	void PrintTheMapInTheScreen(CDC* pDC, CPrintInfo* pInfo,CString mapTitle,LOGFONT* titleFont,int nmapTitleLeftOrMiddleOrRight,CString remarks,LOGFONT* remarkFont,int nremarksLeftOrMiddleOrRight,int nscalenLeftOrMiddleOrRight);
+	void PrintTheMapInTheScreen(CDC* pDC, CPrintInfo* pInfo, CString mapTitle, LOGFONT* titleFont, int nmapTitleLeftOrMiddleOrRight, CString remarks, LOGFONT* remarkFont, int nremarksLeftOrMiddleOrRight, int nscalenLeftOrMiddleOrRight);
 	//{{AFX_MSG(CYimaEncViewerView)
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
@@ -223,19 +225,19 @@ protected:
 	afx_msg void OnMoveLeft();
 	afx_msg void OnMoveRight();
 	afx_msg void OnMoveUp();
-	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags); 
+	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnAreaZoomIn();
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
-	afx_msg void OnCenterRotateMap(); 
+	afx_msg void OnCenterRotateMap();
 	afx_msg void OnAddWaypoint();
-	afx_msg void OnAddRoute(); 	
+	afx_msg void OnAddRoute();
 	afx_msg void OnDelWaypoint();
 	afx_msg void OnDelRoute();
 	afx_msg void OnDirectEditRoute();
 	afx_msg void OnEblLine();
 	afx_msg void OnDelObject();
-	afx_msg void OnTimer(UINT nIDEvent);	
+	afx_msg void OnTimer(UINT nIDEvent);
 	afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
 	afx_msg void OnQuery();
@@ -251,11 +253,11 @@ protected:
 	afx_msg void OnUndo();
 	afx_msg void OnRedo();
 	afx_msg void OnMyFilePrint();
-	afx_msg void OnMyFilePrintPreview(); 
+	afx_msg void OnMyFilePrintPreview();
 	afx_msg void OnAfterDrawMapYimaEncCtrl();
 	afx_msg void OnAfterDrawMarineMapYimaEncCtrl();
-    afx_msg void OnDrawRadar(); 
-	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt); 
+	afx_msg void OnDrawRadar();
+	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
 	afx_msg void OnAreaSelect();
 	afx_msg void OnRouteSafeDetect();
 	afx_msg void OnCopyObject();
@@ -265,8 +267,8 @@ protected:
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 	/* YIMAENC COMMENT: 注意，
-    在非对话框程序中，YimaEnc Control 的消息响应无法通过Class Wizard自动
-    建立, 需手工增加消息映射宏 BEGIN_EVENTSINK_MAP 等声明 */
+	在非对话框程序中，YimaEnc Control 的消息响应无法通过Class Wizard自动
+	建立, 需手工增加消息映射宏 BEGIN_EVENTSINK_MAP 等声明 */
 public:
 	afx_msg void OnNoBlankMouseDrag();
 	afx_msg void OnWheelZoomByMousePosi();
@@ -302,7 +304,9 @@ UINT Thread_Receive_ODU(LPVOID para);		//接收ODU线程
 
 #ifndef _DEBUG  // debug version in YimaEncViewerView.cpp
 inline CYimaEncViewerDoc* CYimaEncViewerView::GetDocument()
-   { return (CYimaEncViewerDoc*)m_pDocument; }
+{
+	return (CYimaEncViewerDoc*)m_pDocument;
+}
 #endif
 
 /////////////////////////////////////////////////////////////////////////////

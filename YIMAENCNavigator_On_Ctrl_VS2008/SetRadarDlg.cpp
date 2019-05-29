@@ -6,9 +6,11 @@
 #include "SetRadarDlg.h"
 #include "afxdialogex.h"
 #include "SendData.h"
+#include "AisIPConfig.h"
 
 extern Radar curSelectRadar;
 extern list<Radar> radarList;
+AisIPConfig ipCon_Set(L"AisIPconfig.txt");
 
 // SetRadarDlg 对话框
 
@@ -164,6 +166,6 @@ void SetRadarDlg::OnBnClickedOk()
 		radarAddMsg = radarAddMsg + ";AR" + ";" + curSelectRadar.Id + ";" + ";" + ";" + lonStr.GetBuffer() + ";" + lanStr.GetBuffer() + ";" + heightStr.GetBuffer() + ";" + rangeStr.GetBuffer() + ";" + levelStr.GetBuffer() + "#";
 	}
 	//发送Radar添加信息
-	sendRadarData(radarAddMsg, "127.0.0.1", RADAR_PORT);
+	sendRadarData(radarAddMsg, ipCon_Set.IP_Radar.GetBuffer(), ipCon_Set.Port_Add_Radar);
 	CDialog::OnOK();
 }
