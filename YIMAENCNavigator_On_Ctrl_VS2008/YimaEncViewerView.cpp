@@ -751,7 +751,7 @@ void CYimaEncViewerView::OnSetFocus(CWnd* pOldWnd)
 			m_hSendAISThread = ::CreateThread(NULL, 0, SendAISThreadProc, this, 0, NULL);
 
 			SetTimer(TIME_REFRESH_RADARLIST, 500, 0);
-			SetTimer(TIME_ODU_PARSE, 100, 0);
+			SetTimer(TIME_ODU_PARSE, 3000, 0);
 			SetTimer(TIME_SET_ODUCOUNT, 550, 0);
 		}
 
@@ -5810,7 +5810,7 @@ DWORD __stdcall CYimaEncViewerView::SendAISThreadProc(LPVOID pvoid)
 			aisOtherEncodeMsg.AppendChar('\r');
 			aisOtherEncodeMsg.AppendChar('\n');
 			sendAisData(aisOtherEncodeMsg.GetBuffer(), pView->ipCon->IP_Radar.GetBuffer(), pView->ipCon->Port_Ais_Radar);
-			sendAisData(aisOwnEncodeMsg.GetBuffer(), pView->ipCon->IP_Odu.GetBuffer(), pView->ipCon->Port_Ais_Odu);
+			sendAisData(aisOtherEncodeMsg.GetBuffer(), pView->ipCon->IP_Odu.GetBuffer(), pView->ipCon->Port_Ais_Odu);
 		}
 		Sleep(500);
 	}

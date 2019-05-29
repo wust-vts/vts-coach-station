@@ -68,7 +68,7 @@ BOOL SetRadarDlg::OnInitDialog()
 
 	selectODUlist.SetFont(statusFont);
 	//**********data 测试用************
-	selectODUlist.InsertItem(0, _T(""));
+	/*selectODUlist.InsertItem(0, _T(""));
 	selectODUlist.SetItemText(0, 1, "123");
 	selectODUlist.SetItemText(0, 2, "192.168.0.1");
 	selectODUlist.SetItemText(0, 3, "6001");
@@ -81,7 +81,7 @@ BOOL SetRadarDlg::OnInitDialog()
 	selectODUlist.InsertItem(2, _T(""));
 	selectODUlist.SetItemText(2, 1, "789");
 	selectODUlist.SetItemText(2, 2, "192.168.0.3");
-	selectODUlist.SetItemText(2, 3, "6003");
+	selectODUlist.SetItemText(2, 3, "6003");*/
 	//*********************************
 	selectODUlist.ShowWindow(SW_SHOW);
 
